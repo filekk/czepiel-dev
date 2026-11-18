@@ -90,7 +90,12 @@ resource "aws_cloudfront_distribution" "cdn" {
   tags = {
     Name = "czepiel-dev-web"
   }
+
+  lifecycle {
+    ignore_changes = [web_acl_id]
+  }
 }
+
 
 resource "aws_s3_bucket_policy" "site_policy" {
   bucket = aws_s3_bucket.site.id
