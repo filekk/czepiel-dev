@@ -1,0 +1,48 @@
+name: Deploy Static Site with Terraform
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Terraform Init & Apply
+        run: |
+          terraform init
+          terraform apply -auto-approve
+
+      - name: Sync Website to S3 & Invalidate CloudFront
+        run: |
+          BUCKET_NAME=$(terraform output -raw bucket_name)
+          DIST_ID=$(terraform output -raw cloudfront_id)
+          CF_DOMAIN=$(terraform output -raw cloudfront_domain)
+
+          aws s3 sync ../website s3://$BUCKET_NAME --delete
+          aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
+
+          echo "CloudFront domain: $CF_DOMAIN"
