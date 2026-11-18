@@ -1,12 +1,753 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>czepiel.dev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>czepiel.dev - Junior Cloud &amp; DevOps Engineer</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
-<body>
-    <h1>test 2</h1>
+<body class="bg-[#0a0a0a] text-white antialiased selection:bg-white selection:text-black">
+
+  <!-- TOP NAVIGATION BAR -->
+  <nav class="sticky top-0 z-50 border-b border-neutral-800 bg-[#0a0a0a]">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-3.5 text-xs">
+      <a href="#about" class="text-sm font-bold tracking-tight text-white">
+        czepiel.dev
+      </a>
+
+      <div class="flex flex-wrap items-center gap-1 sm:gap-2">
+        <a href="#about" data-i18n="nav_about" class="border border-transparent px-2.5 py-1 text-white transition hover:border-white">
+          o_mnie
+        </a>
+        <a href="#experience" data-i18n="nav_exp" class="border border-transparent px-2.5 py-1 text-white transition hover:border-white">
+          doswiadczenie
+        </a>
+        <a href="#projects" data-i18n="nav_projects" class="border border-transparent px-2.5 py-1 text-white transition hover:border-white">
+          projekty
+        </a>
+        <a href="#stack" data-i18n="nav_stack" class="border border-transparent px-2.5 py-1 text-white transition hover:border-white">
+          umiejetnosci
+        </a>
+        <a href="#contact" data-i18n="nav_contact" class="border border-transparent px-2.5 py-1 text-white transition hover:border-white">
+          kontakt
+        </a>
+
+        <!-- LANGUAGE SWITCHER BUTTON -->
+        <button
+          id="lang-toggle"
+          type="button"
+          class="ml-2 inline-flex cursor-pointer items-center gap-1.5 border border-white bg-[#111111] px-3 py-1 font-bold text-white transition hover:bg-white hover:text-black"
+          aria-label="Switch language"
+        >
+          <iconify-icon icon="lucide:languages" class="text-sm"></iconify-icon>
+          <span id="lang-label">PL</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-5xl px-6">
+
+    <!-- HERO / ABOUT SECTION -->
+    <header id="about" class="border-b border-neutral-800 pt-10 pb-12 sm:pt-12 sm:pb-14">
+      <div class="mb-4 inline-flex items-center border border-neutral-700 bg-[#111111] px-3 py-1 text-xs font-bold tracking-wide text-white">
+        #OPEN_TO_WORK
+      </div>
+
+      <h1 class="min-h-[2.5rem] text-3xl font-bold tracking-tight text-white sm:min-h-[3.25rem] sm:text-5xl">
+        <span id="typewriter-name"></span><span class="animate-cursor ml-1 inline-block">_</span>
+      </h1>
+
+      <p class="mt-2.5 text-sm font-bold text-white sm:text-base">
+        Junior Cloud &amp; DevOps Engineer | AWS Certified (SAA-C03)
+      </p>
+
+      <p class="mt-2 inline-flex items-center gap-2 text-xs text-white">
+        <iconify-icon icon="lucide:map-pin" class="text-sm"></iconify-icon>
+        <span data-i18n="hero_location">Politechnika Łódzka (FTIMS) · Łódź &amp; Jelenia Góra, Polska</span>
+      </p>
+
+      <div class="mt-6 max-w-3xl border-l-2 border-white pl-5 text-xs leading-relaxed text-white sm:text-sm">
+        <p data-i18n="about_p1">
+          Absolwent Technikum Elektronicznego o profilu programistycznym, obecny student Politechniki Łódzkiej na
+          kierunku Informatyka Stosowana. Wyróżniam się pasją do chmury obliczeniowej AWS, automatyzacji procesów
+          wdrożeniowych oraz administracji systemami Linux.
+        </p>
+      </div>
+
+      <div class="mt-7 flex flex-wrap items-center gap-3 text-xs">
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 border border-white bg-white px-5 py-2.5 font-bold text-black transition hover:bg-[#0a0a0a] hover:text-white"
+        >
+          <iconify-icon icon="lucide:folder-git-2" class="text-sm"></iconify-icon>
+          <span data-i18n="cta_projects">Zobacz projekty</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/filip-czepiel/"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 border border-neutral-700 bg-[#111111] px-5 py-2.5 font-medium text-white transition hover:border-white hover:bg-white hover:text-black"
+        >
+          <iconify-icon icon="simple-icons:linkedin" class="text-sm"></iconify-icon>
+          <span>LinkedIn</span>
+        </a>
+        <a
+          href="https://github.com/filekk"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 border border-neutral-700 bg-[#111111] px-5 py-2.5 font-medium text-white transition hover:border-white hover:bg-white hover:text-black"
+        >
+          <iconify-icon icon="simple-icons:github" class="text-sm"></iconify-icon>
+          <span>GitHub</span>
+        </a>
+        <a
+          href="./resume.pdf"
+          download
+          class="inline-flex items-center gap-2 border border-neutral-700 bg-[#111111] px-5 py-2.5 font-medium text-white transition hover:border-white hover:bg-white hover:text-black"
+        >
+          <iconify-icon icon="lucide:file-down" class="text-sm"></iconify-icon>
+          <span data-i18n="cta_cv">CV.pdf</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- COMPACT HORIZONTAL TIMELINE (NO SCROLLBAR) -->
+    <section id="experience" class="border-b border-neutral-800 py-12 sm:py-14">
+      <div class="mb-7 flex flex-wrap items-center justify-between gap-2 border-b border-neutral-800 pb-3">
+        <h2 data-i18n="exp_heading" class="text-xl font-bold tracking-tight text-white sm:text-2xl">
+          // DOŚWIADCZENIE &amp; EDUKACJA
+        </h2>
+        <span data-i18n="timeline_hint" class="text-xs text-neutral-400">
+          Najedź na etap, aby rozwinąć
+        </span>
+      </div>
+
+      <div class="relative grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <!-- Horizontal connecting line on desktop -->
+        <div class="pointer-events-none absolute top-[18px] right-4 left-4 hidden h-[1px] bg-neutral-800 lg:block"></div>
+
+        <!-- 1. High School -->
+        <article class="timeline-item group relative cursor-pointer hover:z-30 [.is-open]:z-30">
+          <div class="relative z-10 mb-2.5 flex items-center gap-2">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center border border-neutral-700 bg-[#0a0a0a] text-white transition-all duration-200 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-[.is-open]:scale-110 group-[.is-open]:border-white group-[.is-open]:bg-white group-[.is-open]:text-black">
+              <iconify-icon icon="lucide:school" class="text-base"></iconify-icon>
+            </div>
+            <span class="inline-flex items-center gap-1 border border-neutral-800 bg-[#111111] px-2 py-0.5 text-[11px] text-white">
+              <iconify-icon icon="lucide:calendar" class="text-[11px]"></iconify-icon>
+              <span>2021-2026</span>
+            </span>
+          </div>
+
+          <div class="w-full border border-neutral-800 bg-[#111111] p-3 transition-all duration-200 lg:group-hover:w-64 lg:group-[.is-open]:w-64 group-hover:border-white group-hover:bg-[#161616] group-hover:shadow-2xl group-hover:shadow-black group-[.is-open]:border-white group-[.is-open]:bg-[#161616] group-[.is-open]:shadow-2xl group-[.is-open]:shadow-black">
+            <h3 data-i18n="tl1_title" class="text-xs font-bold leading-snug text-white">
+              Technik Programista
+            </h3>
+            <p data-i18n="tl1_short" class="mt-1 text-[11px] leading-snug text-neutral-400">
+              Szkoła średnia · Jelenia Góra
+            </p>
+
+            <div class="grid grid-rows-[0fr] transition-all duration-200 ease-out group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+              <div class="overflow-hidden">
+                <div class="mt-2.5 space-y-1.5 border-t border-neutral-800 pt-2.5 text-[11px] leading-relaxed text-white">
+                  <p class="font-semibold">
+                    Zespół Szkół Elektronicznych im. Obrońców Poczty Polskiej w Jeleniej Górze (wrz 2021 - maj 2026)
+                  </p>
+                  <p data-i18n="tl1_detail1">
+                    - INF.03: Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych
+                  </p>
+                  <p data-i18n="tl1_detail2">
+                    - INF.04: Projektowanie, programowanie i rozwój aplikacji oprogramowania
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Internship 2023 -->
+        <article class="timeline-item group relative cursor-pointer hover:z-30 [.is-open]:z-30">
+          <div class="relative z-10 mb-2.5 flex items-center gap-2">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center border border-neutral-700 bg-[#0a0a0a] text-white transition-all duration-200 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-[.is-open]:scale-110 group-[.is-open]:border-white group-[.is-open]:bg-white group-[.is-open]:text-black">
+              <iconify-icon icon="lucide:cpu" class="text-base"></iconify-icon>
+            </div>
+            <span class="inline-flex items-center gap-1 border border-neutral-800 bg-[#111111] px-2 py-0.5 text-[11px] text-white">
+              <iconify-icon icon="lucide:calendar" class="text-[11px]"></iconify-icon>
+              <span>2023.11</span>
+            </span>
+          </div>
+
+          <div class="w-full border border-neutral-800 bg-[#111111] p-3 transition-all duration-200 lg:group-hover:w-64 lg:group-[.is-open]:w-64 group-hover:border-white group-hover:bg-[#161616] group-hover:shadow-2xl group-hover:shadow-black group-[.is-open]:border-white group-[.is-open]:bg-[#161616] group-[.is-open]:shadow-2xl group-[.is-open]:shadow-black">
+            <h3 class="text-xs font-bold leading-snug text-white">
+              IT Support Intern
+            </h3>
+            <p data-i18n="tl2_short" class="mt-1 text-[11px] leading-snug text-neutral-400">
+              Praktyka · Książnica Karkonoska
+            </p>
+
+            <div class="grid grid-rows-[0fr] transition-all duration-200 ease-out group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+              <div class="overflow-hidden">
+                <div class="mt-2.5 space-y-1.5 border-t border-neutral-800 pt-2.5 text-[11px] leading-relaxed text-white">
+                  <p class="font-semibold">
+                    IT Support &amp; Hardware Intern (2023.11 - 2023.12)
+                  </p>
+                  <p data-i18n="tl2_detail">
+                    Wsparcie techniczne użytkowników, diagnostyka sprzętu komputerowego, konfiguracja stanowisk pracy oraz usuwanie usterek oprogramowania.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Internship 2025 -->
+        <article class="timeline-item group relative cursor-pointer hover:z-30 [.is-open]:z-30">
+          <div class="relative z-10 mb-2.5 flex items-center gap-2">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center border border-neutral-700 bg-[#0a0a0a] text-white transition-all duration-200 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-[.is-open]:scale-110 group-[.is-open]:border-white group-[.is-open]:bg-white group-[.is-open]:text-black">
+              <iconify-icon icon="lucide:server" class="text-base"></iconify-icon>
+            </div>
+            <span class="inline-flex items-center gap-1 border border-neutral-800 bg-[#111111] px-2 py-0.5 text-[11px] text-white">
+              <iconify-icon icon="lucide:calendar" class="text-[11px]"></iconify-icon>
+              <span>2025.02</span>
+            </span>
+          </div>
+
+          <div class="w-full border border-neutral-800 bg-[#111111] p-3 transition-all duration-200 lg:group-hover:w-64 lg:group-[.is-open]:w-64 group-hover:border-white group-hover:bg-[#161616] group-hover:shadow-2xl group-hover:shadow-black group-[.is-open]:border-white group-[.is-open]:bg-[#161616] group-[.is-open]:shadow-2xl group-[.is-open]:shadow-black">
+            <h3 class="text-xs font-bold leading-snug text-white">
+              Junior Systems Intern
+            </h3>
+            <p data-i18n="tl3_short" class="mt-1 text-[11px] leading-snug text-neutral-400">
+              Praktyka · Książnica Karkonoska
+            </p>
+
+            <div class="grid grid-rows-[0fr] transition-all duration-200 ease-out group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+              <div class="overflow-hidden">
+                <div class="mt-2.5 space-y-1.5 border-t border-neutral-800 pt-2.5 text-[11px] leading-relaxed text-white">
+                  <p class="font-semibold">
+                    Junior IT Support &amp; Systems Intern (2025.02 - 2025.03)
+                  </p>
+                  <p data-i18n="tl3_detail">
+                    Monitorowanie, aktualizacja i optymalizacja infrastruktury IT, administracja lokalnymi systemami oraz utrzymanie ciągłości działania sieci.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. AWS Certification -->
+        <article class="timeline-item group relative cursor-pointer hover:z-30 [.is-open]:z-30">
+          <div class="relative z-10 mb-2.5 flex items-center gap-2">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center border border-neutral-700 bg-[#0a0a0a] text-white transition-all duration-200 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-[.is-open]:scale-110 group-[.is-open]:border-white group-[.is-open]:bg-white group-[.is-open]:text-black">
+              <iconify-icon icon="fa6-brands:aws" class="text-base"></iconify-icon>
+            </div>
+            <span class="inline-flex items-center gap-1 border border-neutral-800 bg-[#111111] px-2 py-0.5 text-[11px] text-white">
+              <iconify-icon icon="lucide:calendar" class="text-[11px]"></iconify-icon>
+              <span>2026.10</span>
+            </span>
+          </div>
+
+          <div class="w-full border border-neutral-800 bg-[#111111] p-3 transition-all duration-200 lg:group-hover:w-64 lg:group-[.is-open]:w-64 group-hover:border-white group-hover:bg-[#161616] group-hover:shadow-2xl group-hover:shadow-black group-[.is-open]:border-white group-[.is-open]:bg-[#161616] group-[.is-open]:shadow-2xl group-[.is-open]:shadow-black">
+            <h3 class="text-xs font-bold leading-snug text-white">
+              AWS SAA-C03
+            </h3>
+            <p data-i18n="tl4_short" class="mt-1 text-[11px] leading-snug text-neutral-400">
+              Solutions Architect
+            </p>
+
+            <div class="grid grid-rows-[0fr] transition-all duration-200 ease-out group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+              <div class="overflow-hidden">
+                <div class="mt-2.5 space-y-1.5 border-t border-neutral-800 pt-2.5 text-[11px] leading-relaxed text-white">
+                  <p class="font-semibold">
+                    AWS Certified Solutions Architect - Associate (2026.10 - 2029.10)
+                  </p>
+                  <p data-i18n="tl4_detail">
+                    Projektowanie bezpiecznej, skalowalnej i odpornej na awarie architektury chmurowej (IAM, VPC, S3, CloudFront, EC2, Lambda).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. University (expands leftward on desktop so it stays within page margin) -->
+        <article class="timeline-item group relative cursor-pointer hover:z-30 [.is-open]:z-30">
+          <div class="relative z-10 mb-2.5 flex items-center gap-2">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center border border-neutral-700 bg-[#0a0a0a] text-white transition-all duration-200 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-[.is-open]:scale-110 group-[.is-open]:border-white group-[.is-open]:bg-white group-[.is-open]:text-black">
+              <iconify-icon icon="lucide:graduation-cap" class="text-base"></iconify-icon>
+            </div>
+            <span class="inline-flex items-center gap-1 border border-neutral-800 bg-[#111111] px-2 py-0.5 text-[11px] text-white">
+              <iconify-icon icon="lucide:calendar" class="text-[11px]"></iconify-icon>
+              <span>2026-2030</span>
+            </span>
+          </div>
+
+          <div class="w-full border border-neutral-800 bg-[#111111] p-3 transition-all duration-200 lg:group-hover:ml-auto lg:group-hover:w-64 lg:group-[.is-open]:ml-auto lg:group-[.is-open]:w-64 group-hover:border-white group-hover:bg-[#161616] group-hover:shadow-2xl group-hover:shadow-black group-[.is-open]:border-white group-[.is-open]:bg-[#161616] group-[.is-open]:shadow-2xl group-[.is-open]:shadow-black">
+            <h3 data-i18n="tl5_title" class="text-xs font-bold leading-snug text-white">
+              Politechnika Łódzka
+            </h3>
+            <p data-i18n="tl5_short" class="mt-1 text-[11px] leading-snug text-neutral-400">
+              Informatyka Stosowana
+            </p>
+
+            <div class="grid grid-rows-[0fr] transition-all duration-200 ease-out group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+              <div class="overflow-hidden">
+                <div class="mt-2.5 space-y-1.5 border-t border-neutral-800 pt-2.5 text-[11px] leading-relaxed text-white">
+                  <p class="font-semibold">
+                    Wydział FTIMS · Studia inżynierskie (2026 - 2030)
+                  </p>
+                  <p data-i18n="tl5_detail">
+                    Studia dzienne pierwszego stopnia ukierunkowane na inżynierię oprogramowania, systemy operacyjne i architekturę komputerów.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. ŁDI 2026 (expands leftward on desktop so it stays within page margin) -->
+        <article class="timeline-item group relative cursor-pointer hover:z-30 [.is-open]:z-30">
+          <div class="relative z-10 mb-2.5 flex items-center gap-2">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center border border-neutral-700 bg-[#0a0a0a] text-white transition-all duration-200 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-[.is-open]:scale-110 group-[.is-open]:border-white group-[.is-open]:bg-white group-[.is-open]:text-black">
+              <iconify-icon icon="lucide:users" class="text-base"></iconify-icon>
+            </div>
+            <span class="inline-flex items-center gap-1 border border-neutral-800 bg-[#111111] px-2 py-0.5 text-[11px] text-white">
+              <iconify-icon icon="lucide:calendar" class="text-[11px]"></iconify-icon>
+              <span>2026.11</span>
+            </span>
+          </div>
+
+          <div class="w-full border border-neutral-800 bg-[#111111] p-3 transition-all duration-200 lg:group-hover:ml-auto lg:group-hover:w-64 lg:group-[.is-open]:ml-auto lg:group-[.is-open]:w-64 group-hover:border-white group-hover:bg-[#161616] group-hover:shadow-2xl group-hover:shadow-black group-[.is-open]:border-white group-[.is-open]:bg-[#161616] group-[.is-open]:shadow-2xl group-[.is-open]:shadow-black">
+            <h3 data-i18n="tl6_title" class="text-xs font-bold leading-snug text-white">
+              ŁDI 2026
+            </h3>
+            <p data-i18n="tl6_short" class="mt-1 text-[11px] leading-snug text-neutral-400">
+              Organizator · FTIMS PŁ
+            </p>
+
+            <div class="grid grid-rows-[0fr] transition-all duration-200 ease-out group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+              <div class="overflow-hidden">
+                <div class="mt-2.5 space-y-1.5 border-t border-neutral-800 pt-2.5 text-[11px] leading-relaxed text-white">
+                  <p class="font-semibold">
+                    Wolontariusz / Organizator - Łódzkie Dni Informatyki 2026
+                  </p>
+                  <p data-i18n="tl6_detail">
+                    Wsparcie organizacyjne 17. edycji ŁDI: obsługa rejestracji uczestników, koordynacja logistyczna oraz przygotowanie sal prelekcyjnych na FTIMS.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="border-b border-neutral-800 py-12 sm:py-14">
+      <div class="mb-7 border-b border-neutral-800 pb-3">
+        <h2 data-i18n="proj_heading" class="text-xl font-bold tracking-tight text-white sm:text-2xl">
+          // PROJEKTY
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6">
+        <!-- Project 1: czepiel.dev -->
+        <article class="flex flex-col justify-between border border-neutral-800 bg-[#111111] p-6 transition hover:border-white">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-white">
+              <span class="font-semibold">INFRASTRUCTURE_AS_CODE</span>
+              <span class="border border-neutral-700 px-2 py-0.5">PRODUCTION</span>
+            </div>
+            <h3 class="mt-3 text-base font-bold text-white sm:text-lg">
+              czepiel.dev - AWS Edge Hosting &amp; CI/CD
+            </h3>
+            <p data-i18n="proj1_desc" class="mt-3 max-w-3xl text-xs leading-relaxed text-white sm:text-sm">
+              W pełni zautomatyzowana infrastruktura chmurowa na AWS zarządzana przez Terraform. Prywatny bucket S3
+              w regionie eu-central-1 udostępniany globalnie przez CloudFront z Origin Access Control (OAC), certyfikat
+              TLS w ACM (us-east-1), zdalny stan Terraforma na S3 oraz automatyczne wdrożenia z GitHub Actions.
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex flex-wrap gap-2 text-xs text-white">
+              <span class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-1.5">
+                <iconify-icon icon="simple-icons:terraform" class="text-sm"></iconify-icon>
+                Terraform
+              </span>
+              <span class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-1.5">
+                <iconify-icon icon="fa6-brands:aws" class="text-sm"></iconify-icon>
+                AWS S3 &amp; CloudFront
+              </span>
+              <span class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-1.5">
+                <iconify-icon icon="simple-icons:githubactions" class="text-sm"></iconify-icon>
+                GitHub Actions
+              </span>
+              <span class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-1.5">
+                <iconify-icon icon="simple-icons:tailwindcss" class="text-sm"></iconify-icon>
+                Tailwind CSS
+              </span>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-4 border-t border-neutral-800 pt-4 text-xs">
+              <a
+                href="https://github.com/filekk/czepiel-dev"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-2 border border-neutral-700 bg-[#0a0a0a] px-3.5 py-2 font-semibold text-white transition hover:border-white hover:bg-white hover:text-black"
+              >
+                <iconify-icon icon="simple-icons:github" class="text-base"></iconify-icon>
+                <span>filekk/czepiel-dev</span>
+                <iconify-icon icon="lucide:arrow-up-right" class="text-sm"></iconify-icon>
+              </a>
+
+              <!-- BLOG POST PLACEHOLDER -->
+              <a
+                href="#blog-coming-soon"
+                onclick="return false;"
+                class="inline-flex cursor-not-allowed items-center gap-2 border border-dashed border-neutral-700 bg-[#0a0a0a] px-3.5 py-2 text-white opacity-80"
+              >
+                <iconify-icon icon="simple-icons:devdotto" class="text-base"></iconify-icon>
+                <span data-i18n="proj1_blog">Wpis na blogu / dev.to (wkrótce)</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS & LANGUAGES SECTION -->
+    <section id="stack" class="py-12 sm:py-14">
+      <div class="mb-7 border-b border-neutral-800 pb-3">
+        <h2 data-i18n="stack_heading" class="text-xl font-bold tracking-tight text-white sm:text-2xl">
+          // UMIEJĘTNOŚCI &amp; JĘZYKI
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <!-- Card 1: Cloud -->
+        <div class="border border-neutral-800 bg-[#111111] p-6">
+          <p class="text-sm font-bold text-white">CLOUD_AWS</p>
+          <div class="mt-4 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white">
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="fa6-brands:aws" class="text-base"></iconify-icon>
+              AWS
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:amazons3" class="text-base"></iconify-icon>
+              S3
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:amazonec2" class="text-base"></iconify-icon>
+              EC2
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:awslambda" class="text-base"></iconify-icon>
+              Lambda
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="lucide:globe" class="text-base"></iconify-icon>
+              CloudFront / OAC
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="lucide:shield-check" class="text-base"></iconify-icon>
+              IAM / ACM / VPC
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 2: IaC & DevOps -->
+        <div class="border border-neutral-800 bg-[#111111] p-6">
+          <p class="text-sm font-bold text-white">IAC_&_DEVOPS</p>
+          <div class="mt-4 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white">
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:terraform" class="text-base"></iconify-icon>
+              Terraform
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:githubactions" class="text-base"></iconify-icon>
+              GitHub Actions
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:docker" class="text-base"></iconify-icon>
+              Docker
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:git" class="text-base"></iconify-icon>
+              Git
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 3: Linux & Code -->
+        <div class="border border-neutral-800 bg-[#111111] p-6">
+          <p class="text-sm font-bold text-white">LINUX_&_CODE</p>
+          <div class="mt-4 flex flex-wrap gap-2.5 text-xs sm:text-sm text-white">
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:linux" class="text-base"></iconify-icon>
+              Linux
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:cplusplus" class="text-base"></iconify-icon>
+              C++17
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:python" class="text-base"></iconify-icon>
+              Python
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:gnubash" class="text-base"></iconify-icon>
+              Bash
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="simple-icons:tailwindcss" class="text-base"></iconify-icon>
+              Tailwind CSS
+            </span>
+            <span class="inline-flex items-center gap-2 border border-neutral-800 bg-[#0a0a0a] px-3.5 py-2">
+              <iconify-icon icon="lucide:database" class="text-base"></iconify-icon>
+              SQL
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 4: Languages -->
+        <div class="border border-neutral-800 bg-[#111111] p-6">
+          <p data-i18n="lang_card_title" class="text-sm font-bold text-white">JĘZYKI</p>
+          <div class="mt-4 space-y-3 text-xs sm:text-sm text-white">
+            <!-- Polish -->
+            <div class="border border-neutral-800 bg-[#0a0a0a] p-3">
+              <div class="flex items-center justify-between font-bold">
+                <span data-i18n="lang_pl_name">PL · Polski</span>
+                <span data-i18n="lang_pl_lvl" class="border border-neutral-700 px-2 py-0.5 text-xs">OJCZYSTY</span>
+              </div>
+              <div class="mt-2.5 grid grid-cols-5 gap-1.5">
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+              </div>
+            </div>
+
+            <!-- English -->
+            <div class="border border-neutral-800 bg-[#0a0a0a] p-3">
+              <div class="flex items-center justify-between font-bold">
+                <span data-i18n="lang_en_name">EN · Angielski</span>
+                <span data-i18n="lang_en_lvl" class="border border-neutral-700 px-2 py-0.5 text-xs">C1 / BIEGŁY</span>
+              </div>
+              <div class="mt-2.5 grid grid-cols-5 gap-1.5">
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 border border-neutral-700 bg-transparent"></span>
+              </div>
+            </div>
+
+            <!-- German -->
+            <div class="border border-neutral-800 bg-[#0a0a0a] p-3">
+              <div class="flex items-center justify-between font-bold">
+                <span data-i18n="lang_de_name">DE · Niemiecki</span>
+                <span data-i18n="lang_de_lvl" class="border border-neutral-700 px-2 py-0.5 text-xs">A2 / PODST.</span>
+              </div>
+              <div class="mt-2.5 grid grid-cols-5 gap-1.5">
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 bg-white"></span>
+                <span class="h-1.5 border border-neutral-700 bg-transparent"></span>
+                <span class="h-1.5 border border-neutral-700 bg-transparent"></span>
+                <span class="h-1.5 border border-neutral-700 bg-transparent"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact" class="border-t border-neutral-800 bg-[#0a0a0a] py-8">
+    <div class="mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 text-xs text-white sm:flex-row sm:items-center">
+      <p>© 2026 Filip Czepiel - czepiel.dev</p>
+      <div class="flex flex-wrap items-center gap-3">
+        <a
+          href="https://www.linkedin.com/in/filip-czepiel/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-2 text-white transition hover:border-white hover:bg-white hover:text-black"
+        >
+          <iconify-icon icon="simple-icons:linkedin" class="text-sm"></iconify-icon>
+          <span>LinkedIn</span>
+        </a>
+        <a
+          href="https://github.com/filekk"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-2 text-white transition hover:border-white hover:bg-white hover:text-black"
+        >
+          <iconify-icon icon="simple-icons:github" class="text-sm"></iconify-icon>
+          <span>GitHub</span>
+        </a>
+        <a
+          href="mailto:contact@czepiel.dev"
+          aria-label="Email"
+          class="inline-flex items-center gap-2 border border-neutral-700 px-3 py-2 text-white transition hover:border-white hover:bg-white hover:text-black"
+        >
+          <iconify-icon icon="lucide:mail" class="text-sm"></iconify-icon>
+          <span>contact@czepiel.dev</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TYPEWRITER, TIMELINE CLICK & BILINGUAL (PL / EN) SCRIPT -->
+  <script>
+    // Typewriter effect for Hero H1
+    const fullName = "Filip Czepiel";
+    const nameTarget = document.getElementById("typewriter-name");
+    let charIndex = 0;
+
+    function typeWriter() {
+      if (charIndex < fullName.length) {
+        nameTarget.textContent += fullName.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 85);
+      }
+    }
+    window.addEventListener("DOMContentLoaded", typeWriter);
+
+    // Allow tap/click toggle on timeline items for mobile devices
+    document.querySelectorAll(".timeline-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("is-open");
+      });
+    });
+
+    // Bilingual dictionary
+    const translations = {
+      pl: {
+        nav_about: "o_mnie",
+        nav_exp: "doswiadczenie",
+        nav_projects: "projekty",
+        nav_stack: "umiejetnosci",
+        nav_contact: "kontakt",
+        hero_location: "Politechnika Łódzka (FTIMS) · Łódź & Jelenia Góra, Polska",
+        about_p1:
+          "Absolwent Technikum Elektronicznego o profilu programistycznym, obecny student Politechniki Łódzkiej na kierunku Informatyka Stosowana. Wyróżniam się pasją do chmury obliczeniowej AWS, automatyzacji procesów wdrożeniowych oraz administracji systemami Linux.",
+        cta_projects: "Zobacz projekty",
+        cta_cv: "CV.pdf",
+        exp_heading: "// DOŚWIADCZENIE & EDUKACJA",
+        timeline_hint: "Najedź na etap, aby rozwinąć",
+        tl1_title: "Technik Programista",
+        tl1_short: "Szkoła średnia · Jelenia Góra",
+        tl1_detail1: "- INF.03: Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych",
+        tl1_detail2: "- INF.04: Projektowanie, programowanie i rozwój aplikacji oprogramowania",
+        tl2_short: "Praktyka · Książnica Karkonoska",
+        tl2_detail:
+          "Wsparcie techniczne użytkowników, diagnostyka sprzętu komputerowego, konfiguracja stanowisk pracy oraz usuwanie usterek oprogramowania.",
+        tl3_short: "Praktyka · Książnica Karkonoska",
+        tl3_detail:
+          "Monitorowanie, aktualizacja i optymalizacja infrastruktury IT, administracja lokalnymi systemami oraz utrzymanie ciągłości działania sieci.",
+        tl4_short: "Solutions Architect",
+        tl4_detail:
+          "Projektowanie bezpiecznej, skalowalnej i odpornej na awarie architektury chmurowej (IAM, VPC, S3, CloudFront, EC2, Lambda).",
+        tl5_title: "Politechnika Łódzka",
+        tl5_short: "Informatyka Stosowana",
+        tl5_detail:
+          "Studia dzienne pierwszego stopnia ukierunkowane na inżynierię oprogramowania, systemy operacyjne i architekturę komputerów.",
+        tl6_title: "ŁDI 2026",
+        tl6_short: "Organizator · FTIMS PŁ",
+        tl6_detail:
+          "Wsparcie organizacyjne 17. edycji ŁDI: obsługa rejestracji uczestników, koordynacja logistyczna oraz przygotowanie sal prelekcyjnych na FTIMS.",
+        proj_heading: "// PROJEKTY",
+        proj1_desc:
+          "W pełni zautomatyzowana infrastruktura chmurowa na AWS zarządzana przez Terraform. Prywatny bucket S3 w regionie eu-central-1 udostępniany globalnie przez CloudFront z Origin Access Control (OAC), certyfikat TLS w ACM (us-east-1), zdalny stan Terraforma na S3 oraz automatyczne wdrożenia z GitHub Actions.",
+        proj1_blog: "Wpis na blogu / dev.to (wkrótce)",
+        stack_heading: "// UMIEJĘTNOŚCI & JĘZYKI",
+        lang_card_title: "JĘZYKI",
+        lang_pl_name: "PL · Polski",
+        lang_pl_lvl: "OJCZYSTY",
+        lang_en_name: "EN · Angielski",
+        lang_en_lvl: "C1 / BIEGŁY",
+        lang_de_name: "DE · Niemiecki",
+        lang_de_lvl: "A2 / PODST."
+      },
+      en: {
+        nav_about: "about",
+        nav_exp: "experience",
+        nav_projects: "projects",
+        nav_stack: "skills",
+        nav_contact: "contact",
+        hero_location: "Lodz University of Technology (FTIMS) · Łódź & Jelenia Góra, Poland",
+        about_p1:
+          "Graduate of Technical Secondary School of Electronics with a programming profile, currently studying Applied Computer Science at Lodz University of Technology. Passionate about AWS cloud computing, deployment automation, and Linux system administration.",
+        cta_projects: "View projects",
+        cta_cv: "CV.pdf",
+        exp_heading: "// EXPERIENCE & EDUCATION",
+        timeline_hint: "Hover over a stage to expand",
+        tl1_title: "Programmer Technician",
+        tl1_short: "High School · Jelenia Góra",
+        tl1_detail1: "- INF.03: Creating and administering websites, web applications, and databases",
+        tl1_detail2: "- INF.04: Designing, programming, and developing software applications",
+        tl2_short: "Internship · Książnica Karkonoska",
+        tl2_detail:
+          "End-user technical support, hardware diagnostics, workstation provisioning, and troubleshooting software issues.",
+        tl3_short: "Internship · Książnica Karkonoska",
+        tl3_detail:
+          "Monitoring, updating, and optimizing IT infrastructure, local systems administration, and maintaining network uptime.",
+        tl4_short: "Solutions Architect",
+        tl4_detail:
+          "Designing secure, scalable, and fault-tolerant cloud architectures across IAM, VPC, S3, CloudFront, EC2, and Lambda.",
+        tl5_title: "Lodz University of Technology",
+        tl5_short: "Applied Computer Science",
+        tl5_detail:
+          "Full-time Bachelor of Engineering studies focused on software engineering, operating systems, and computer architecture.",
+        tl6_title: "ŁDI 2026",
+        tl6_short: "Organizer · FTIMS TUL",
+        tl6_detail:
+          "Organizational support for the 17th edition of ŁDI: attendee registration management, event logistics, and lecture room preparation at FTIMS.",
+        proj_heading: "// PROJECTS",
+        proj1_desc:
+          "End-to-end automated cloud infrastructure on AWS managed via Terraform. Private S3 bucket in eu-central-1 delivered globally through CloudFront with Origin Access Control (OAC), ACM TLS certificate in us-east-1, remote S3 Terraform state, and automated GitHub Actions CI/CD deployments.",
+        proj1_blog: "Blog post / dev.to (coming soon)",
+        stack_heading: "// SKILLS & LANGUAGES",
+        lang_card_title: "LANGUAGES",
+        lang_pl_name: "PL · Polish",
+        lang_pl_lvl: "NATIVE",
+        lang_en_name: "EN · English",
+        lang_en_lvl: "C1 / FLUENT",
+        lang_de_name: "DE · German",
+        lang_de_lvl: "A2 / BASIC"
+      }
+    };
+
+    const toggleBtn = document.getElementById("lang-toggle");
+    const langLabel = document.getElementById("lang-label");
+    let currentLang = localStorage.getItem("czepiel_lang") || "pl";
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem("czepiel_lang", lang);
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      langLabel.textContent = lang.toUpperCase();
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      applyLanguage(currentLang === "pl" ? "en" : "pl");
+    });
+
+    applyLanguage(currentLang);
+  </script>
+
 </body>
 </html>
