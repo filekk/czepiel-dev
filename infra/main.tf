@@ -66,13 +66,8 @@ resource "aws_cloudfront_distribution" "cdn" {
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "S3Origin"
     viewer_protocol_policy = "redirect-to-https"
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
+    compress               = true
+    cache_policy_id        = "658327ea-f89d-4fab-a63d-7e88639e58f6" # Managed-CachingOptimized
   }
 
   restrictions {
@@ -92,7 +87,7 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
 
   lifecycle {
-    ignore_changes = [web_acl_id]
+    ignore_changes = [web_acl_id, price_class]
   }
 }
 
