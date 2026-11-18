@@ -20,11 +20,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Build Tailwind CSS
+        working-directory: .
+        run: |
+          npm ci
+          npm run build
+
       - name: Configure AWS Credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-east-1
+          aws-region: eu-central-1
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -40,9 +52,6 @@ jobs:
         run: |
           BUCKET_NAME=$(terraform output -raw bucket_name)
           DIST_ID=$(terraform output -raw cloudfront_id)
-          CF_DOMAIN=$(terraform output -raw cloudfront_domain)
 
           aws s3 sync ../website s3://$BUCKET_NAME --delete
           aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
-
-          echo "CloudFront domain: $CF_DOMAIN"
