@@ -279,7 +279,7 @@ The system is flat and line-built. Depth comes from tonal steps (canvas, surface
 
 ## Shapes
 
-Soft, controlled corners scaled to object size: 6px on the focus ring, 8px on nav links and the caption well, 10px on buttons and diagram nodes, 16px on the panel, full pills on chips, status pills and dots. The logo mark is a 32-unit square at radius 8 holding a flat raccoon face (Filip's mascot): rounded ears, a dark eye mask and a nose, drawn in two tones (ink and canvas) so it inverts with the colour scheme. The same drawing is the favicon. Borders are always 1px solid, with one exception: a dashed border means "not available yet" (the pending CV button, the planned-project ring). Wires in the diagram are 1px lines with small CSS-triangle arrowheads.
+Soft, controlled corners scaled to object size: 6px on the focus ring, 8px on nav links and the caption well, 10px on buttons and diagram nodes, 16px on the panel, full pills on chips, status pills and dots. The logo mark is the user's own raccoon silhouette (64-unit viewBox: pointed ears, an eye mask joined by a chin band, and a nose), drawn in a single ink colour (currentColor in the header) with no tile, so it inverts with the colour scheme. The same drawing is the favicon. Borders are always 1px solid, with one exception: a dashed border means "not available yet" (the pending CV button, the planned-project ring). Wires in the diagram are 1px lines with small CSS-triangle arrowheads.
 
 ## Components
 
