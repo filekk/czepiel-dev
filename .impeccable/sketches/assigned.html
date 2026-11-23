@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><title>Odjazdy sketch</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;background:#0b1a2c;color:#f1ede3;font-family:"Barlow Condensed","Arial Narrow",sans-serif;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 56px;border-bottom:4px solid #f6c11a}
+.top b{font-size:28px;letter-spacing:.04em}
+.top span{font-size:22px;color:#9fb0c4}
+.clock{font-family:ui-monospace,monospace;font-size:34px;color:#f6c11a}
+.head{display:grid;grid-template-columns:150px 1fr 360px 260px;padding:18px 56px 8px;font-size:18px;letter-spacing:.14em;color:#8ea3bb}
+.row{display:grid;grid-template-columns:150px 1fr 360px 260px;align-items:center;padding:0 56px;height:86px;border-top:2px solid #13263d}
+.cell{display:inline-flex;gap:3px}
+.cell i{display:inline-block;width:30px;height:46px;background:#17202b;border-radius:3px;font-style:normal;font-size:34px;line-height:46px;text-align:center;font-family:ui-monospace,monospace}
+.dest{font-size:40px;font-weight:700}
+.via{font-size:22px;color:#9fb0c4}
+.st{font-size:28px;font-weight:700;letter-spacing:.08em}
+.y{color:#f6c11a}.g{color:#7fd18b}
+.hero{margin:26px 56px 0;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end}
+.hero h1{font-size:118px;line-height:.9;font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:#f6c11a}
+.hero p{font-size:26px;color:#c9d3df;margin-top:12px}
+.cta{display:block;background:#f6c11a;color:#0b1a2c;font-size:34px;font-weight:800;padding:26px 30px;letter-spacing:.06em}
+.cta small{display:block;font-size:18px;font-weight:600;letter-spacing:.1em}
+</style></head><body>
+<div class="top"><b>czepiel.dev &nbsp;·&nbsp; ODJAZDY / DEPARTURES</b><span>PL ⇄ EN</span><div class="clock">14:32</div></div>
+<div class="hero">
+  <div><h1>Filip Czepiel → <em>Staż lato 2027</em></h1>
+  <p>Cloud · DevOps · AI Engineering / MLOps — AWS SAA-C03 · Politechnika Łódzka</p></div>
+  <a class="cta">ODPRAWA / CHECK-IN<small>contact@czepiel.dev · CV</small></a>
+</div>
+<div class="head" style="margin-top:34px"><span>CZAS</span><span>KIERUNEK / DESTINATION</span><span>PRZEZ / VIA</span><span>STATUS</span></div>
+<div class="row"><span class="cell"><i>2</i><i>6</i><i>.</i><i>1</i><i>1</i></span><span class="dest">Avida — AI CFO</span><span class="via">Collabothon · team lead</span><span class="st g">ODJECHAŁ · LIVE</span></div>
+<div class="row"><span class="cell"><i>2</i><i>6</i><i>.</i><i>1</i><i>1</i></span><span class="dest">czepiel.dev</span><span class="via">Terraform · S3 · CloudFront</span><span class="st g">W TRASIE · PROD</span></div>
+<div class="row"><span class="cell"><i>2</i><i>7</i><i>.</i><i>0</i><i>3</i></span><span class="dest">AI app on AWS</span><span class="via">RAG · evals · IaC</span><span class="st y">BOARDING</span></div>
+<div class="row"><span class="cell"><i>2</i><i>7</i><i>.</i><i>0</i><i>4</i></span><span class="dest">Projekt 4</span><span class="via">—</span><span class="st">PLANOWANY</span></div>
+</body></html>

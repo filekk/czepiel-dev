@@ -32,6 +32,19 @@ jobs:
           npm ci
           npm run build
 
+      - name: Stamp deploy metadata into the page
+        working-directory: .
+        run: |
+          SHORT="${GITHUB_SHA::7}"
+          NOW_HUMAN="$(date -u +'%Y-%m-%d %H:%M UTC')"
+          NOW_ISO="$(date -u +'%Y-%m-%dT%H:%MZ')"
+          sed -i \
+            -e "s/__COMMIT_SHA__/${GITHUB_SHA}/g" \
+            -e "s/__COMMIT_SHORT__/${SHORT}/g" \
+            -e "s/__DEPLOYED_AT__/${NOW_HUMAN}/g" \
+            -e "s/__DEPLOYED_ISO__/${NOW_ISO}/g" \
+            website/index.html
+
       - name: Configure AWS Credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:

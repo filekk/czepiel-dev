@@ -22,6 +22,7 @@
   "homepage": "https://github.com/filekk/czepiel-dev#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.5",
+    "geist": "^1.9.2",
     "tailwindcss": "^4.3.5"
   }
 }
