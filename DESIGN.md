@@ -106,8 +106,8 @@ spacing:
   xl: "40px"
   gutter: "20px"
   gutter-wide: "32px"
-  section: "80px"
-  section-wide: "112px"
+  section: "64px"
+  section-wide: "80px"
   container: "72rem"
 components:
   button-primary:
@@ -190,14 +190,14 @@ components:
 
 czepiel.dev is built in the dev-tool product canon at the craft level of Vercel and Linear, played straight: a daylight surface of crisp neutrals, hairline structure, one cobalt accent and one green signal for live things. The product being sold is a person, and the proof is the page itself: a framed deploy panel with real commit, origin and pipeline data, and a small architecture diagram the visitor can interrogate. Everything else is set as calm, ruled editorial lists so the panel is the one object that reads as "product".
 
-Density is moderate and recruiter-paced: large display type for the name, generous section spacing (80px, 112px from 768px), and content held to readable measures (around 40rem for prose). Dark mode is not a separate design; it is the same token set re-valued under `prefers-color-scheme: dark`, with no manual toggle. Motion is one orchestrated settle on load plus a one-shot path trace; nothing loops except the live status dot.
+Density is moderate and recruiter-paced: large display type for the name, skim-paced section spacing (64px, 80px from 768px), and content held to readable measures (around 40rem for prose). Dark mode is not a separate design; it is the same token set re-valued under `prefers-color-scheme: dark`, with no manual toggle. Motion is one orchestrated settle on load plus a one-shot path trace; nothing loops except the live status dot.
 
 The system replaces an earlier terminal costume (monospace everywhere, `// HEADINGS`, hashtag badges, typewriter cursor), which the user retired. It also refuses the generic student template: a centred name over a grid of equal cards.
 
 **Key Characteristics:**
 - Light-first neutrals with a system-following dark mode; every color is a CSS custom property re-valued per scheme.
 - One accent (cobalt) reserved for the action, focus, text selection and the pressed diagram node.
-- Green means live; amber means in progress; dashed means not yet.
+- Green means live; amber means in progress.
 - Geist for all words, Geist Mono only for real data.
 - Structure from 1px hairlines and ruled lists; exactly one lifted object (the deploy panel).
 - Exponential ease-out on everything; full reduced-motion fallbacks.
@@ -228,7 +228,7 @@ Cool, near-colorless neutrals carry the page; two saturated signals (cobalt, gre
 ### Named Rules
 **The Cobalt Is a Verb Rule.** Cobalt appears only where the visitor acts or where the system marks focus or selection: the primary button, the focus ring, `::selection`, the pressed node, the skip link. Headings, links, icons, chips and decoration never take it. Text links are ink with a hairline-strong underline.
 
-**The Green Means Live Rule.** Green is spent only on things that are actually live right now (the site is online, the availability is open). Amber marks work in progress; a dashed muted ring marks planned work. These three states never borrow each other's colour.
+**The Green Means Live Rule.** Green is spent only on things that are actually live right now (the site is online, the availability is open). Amber marks work in progress. These states never borrow each other's colour.
 
 **The One Variable Rule.** Every colour is a `--c-*` custom property defined once for light and once for dark, exposed to Tailwind through `@theme`. Never hard-code a hex in markup; inline SVG uses `var(--c-*)` too.
 
@@ -254,13 +254,13 @@ Cool, near-colorless neutrals carry the page; two saturated signals (cobalt, gre
 - **Data** (Geist Mono 400, 0.8125rem, tabular numerals): commit SHA, region, origin, dates in list gutters.
 
 ### Named Rules
-**The Mono Is Data Rule.** Geist Mono is reserved for values a machine would print: hashes, regions, protocols, dates. Words inside a mono slot switch back to sans (e.g. "w produkcji" inside a date line, the pipeline row). Never set headings, labels or prose in mono.
+**The Mono Is Data Rule.** Geist Mono is reserved for values a machine would print: hashes, regions, protocols, numeric dates. Dates that contain month words (the experience gutter: "lut – mar 2025") are set in sans with tabular figures. Words inside a mono slot switch back to sans (e.g. "w produkcji" inside a date line, the pipeline row). Never set headings, labels or prose in mono.
 
 **The Sentence Case Rule.** Every heading and label is sentence case at normal tracking. No uppercase tracked labels above headings.
 
 ## Layout
 
-A single centred container (max 72rem) with 20px side gutters, widening to 32px from 640px. Desktop uses a 12-column grid: the hero splits 7/5 (copy left, deploy panel right); project rows split 4/8 (metadata gutter left, content right, metadata drops below the content on phones); the experience section splits 4/8 with a sticky heading column (top 6rem) beside a ruled list whose rows use a 9rem date gutter from 640px. Skills are four ruled columns (1 / 2 at 640px / 4 at 1024px).
+A single centred container (max 72rem) with 20px side gutters, widening to 32px from 640px. Desktop uses a 12-column grid: the hero splits 7/5 (copy left, deploy panel right); project rows split 4/8 (metadata gutter left, content right; on phones the gutter hides and a one-line context sits under the title); the experience section splits 4/8 with a sticky heading column (top 6rem) beside three short ruled lists, ordered by recruiter value rather than date: Praktyki, Edukacja i certyfikaty, Wolontariat. Each group has a muted 0.9375rem sentence-case heading (h3; items are h4), rows use a 9rem date gutter from 640px, and dates run newest first inside a group. Rows stay short: title, one meta line, and at most one outcome sentence (no bullet lists, no degree descriptions). Skills are four ruled columns (2 on phones, 4 from 1024px), each ending in a "Pokazane w:" proof line at body size whose items link to the project or credential that shows the skill.
 
 Sections are separated by a hairline top border and 80px of vertical padding (112px from 768px). Inside sections the rhythm is: title, 12px to lede, 48px to content; list rows 40px (projects) or 24px (experience) of vertical padding; chips and buttons gap 8–12px. The header is sticky, 64px tall, canvas at 90% with a light backdrop blur and a hairline bottom. Anchor scrolling offsets by 5rem for the header.
 
@@ -279,7 +279,7 @@ The system is flat and line-built. Depth comes from tonal steps (canvas, surface
 
 ## Shapes
 
-Soft, controlled corners scaled to object size: 6px on the focus ring, 8px on nav links and the caption well, 10px on buttons and diagram nodes, 16px on the panel, full pills on chips, status pills and dots. The logo mark is the user's own raccoon silhouette (64-unit viewBox: pointed ears, an eye mask joined by a chin band, and a nose), drawn in a single ink colour (currentColor in the header) with no tile, so it inverts with the colour scheme. The same drawing is the favicon. Borders are always 1px solid, with one exception: a dashed border means "not available yet" (the pending CV button, the planned-project ring). Wires in the diagram are 1px lines with small CSS-triangle arrowheads.
+Soft, controlled corners scaled to object size: 6px on the focus ring, 8px on nav links and the caption well, 10px on buttons and diagram nodes, 16px on the panel, full pills on chips, status pills and dots. The logo mark is the user's own raccoon silhouette (64-unit viewBox: pointed ears, an eye mask joined by a chin band, and a nose), drawn in a single ink colour (currentColor in the header) with no tile, so it inverts with the colour scheme. The same drawing is the favicon. Borders are always 1px solid. Wires in the diagram are 1px lines with small CSS-triangle arrowheads.
 
 ## Components
 
@@ -287,18 +287,23 @@ Soft, controlled corners scaled to object size: 6px on the focus ring, 8px on na
 Quiet, compact, product-UI buttons with an icon leading the label.
 - **Shape:** gently rounded (10px), 44px tall, 18px side padding, 500 weight at 0.9375rem, 8px icon gap, icons 17px.
 - **Primary:** Signal Cobalt fill and border, white text. One per action row (email).
-- **Secondary:** Paper Surface with a Hairline Strong border and ink text (GitHub, LinkedIn).
+- **Quiet secondary (`.btn-quiet`):** transparent with a Hairline border and muted text, ink with Raised Mist fill on hover (GitHub, LinkedIn), so the email action leads. Hero and contact rows use the same order: email, copy, GitHub, LinkedIn. Below 640px the row is a planned 2-column grid: email (full width) plus copy on the first line, GitHub and LinkedIn as equal halves on the second; from 640px it is one wrapping flex row.
 - **Hover / Focus:** primary darkens to Pressed Cobalt; secondary gains Raised Mist fill and a muted border. 160ms exponential ease-out. Active nudges down 1px. Focus is the global 2px cobalt ring, 3px offset.
 - **Large:** the closing contact row uses 48px height, 20px padding, 1rem text.
-- **Pending:** an unavailable action (`aria-disabled`) is transparent with a dashed Hairline Strong border, muted text, `not-allowed` cursor, no hover or press response, and a title explaining why.
+- **Not yet available:** never a button. The CV is a muted 0.9375rem text line with a file icon under the action row ("CV: wkrótce do pobrania"); it becomes a secondary button when the PDF exists.
+- **Icon (`.btn-icon`):** a square 44px (48px in the contact row) secondary button beside the email CTA that copies the address. After copying, it swaps to a check in Live Green Text for 2s and announces through a shared polite live region. If both clipboard paths fail, a line under the row shows the address as select-all text.
+
+### Hero credential
+- The AWS certification line is the one 500-weight item in the hero meta list (a Credly link with the badge icon), followed from 640px by a bordered Geist Mono "SAA-C03" tag. The university and city stay at 400.
+- The status pill sits under the positioning line, not above the name: an above-the-name label would break the no-eyebrow ban.
 
 ### Chips
 - **Style:** 28px pill, Paper Surface, Hairline border, ink text at 0.8125rem, 10px padding. Static tags for stack and role; not interactive.
 
 ### Status Pill and Dot
-- **Dot:** 8px Live Green circle with a pulse ring (scale to 2.8x, fading, 2.4s loop) that is removed entirely under reduced motion.
-- **Pill:** the dot plus Live Green Text in a Paper Surface pill with a Hairline border. Used for availability in the hero and "Online" in the panel header.
-- **State markers:** in-progress work uses an 8px hollow 2px ring in Building Amber beside amber text; planned work uses the same ring dashed, in muted.
+- **Dot:** 8px Live Green circle. Only the panel's "Online" dot pulses (scale to 2.8x, fading, 2.4s loop; removed under reduced motion); the hero availability dot is `.still`. One loop per page.
+- **Pill:** the dot plus Live Green Text in a Paper Surface pill with a Hairline border. Used only for availability in the hero. The panel's "Online" is the bare pulsing dot plus Live Green Text with no pill border, so the pill shape keeps one meaning.
+- **State markers:** upcoming work is a single row with an 8px hollow 2px ring in Building Amber and one muted sentence naming the states (in progress, planned). No titles until a project ships.
 
 ### Cards / Containers (the Deploy Panel)
 - **Corner Style:** 16px.
@@ -306,21 +311,22 @@ Quiet, compact, product-UI buttons with an icon leading the label.
 - **Shadow Strategy:** Panel lift (see Elevation); the only shadowed object.
 - **Border:** 1px Hairline.
 - **Internal Padding:** 20px sides; header 16px vertical.
-- **Rows:** a definition list, each row a two-column grid (7.5rem label column, 16px gap), 11px by 20px padding, hairline top. Labels in muted sans 0.875rem; values in Geist Mono 0.8125rem, wrapping anywhere.
+- **Rows:** a definition list, each row a two-column grid (7.5rem label column, 16px gap; 6.25rem and 12px below 420px), 11px by 20px padding, hairline top. Labels in muted sans 0.875rem; values in Geist Mono 0.8125rem, wrapping anywhere.
 - **Motion:** header, rows and diagram settle in sequence on load.
+- **Phones:** below 768px the panel shows only the header and the Commit row; Wdrożono, Źródło and Pipeline move into the top of the "Jak działa ta strona" disclosure, so Projects arrive sooner. CI stamps every copy of the deploy placeholders (sed with /g).
 
 ### Navigation
 - **Style:** text links at 0.875rem, muted at rest, ink on hover and for the current section (`aria-current`, driven by scroll position). 44px tall hit areas, 12px padding, 8px radius, colour-only transition.
 - **Language toggle:** the same nav link with a Hairline border and ink 500 text; it names the language it switches to.
-- **Mobile:** section links hide below 768px; "Kontakt" and the toggle remain.
+- **Mobile:** below 768px only "Projekty" and the toggle remain. The jump goes to the proof; contact is already a primary button in the hero.
 
 ### Architecture Flow (signature)
-A compact, interactive diagram of how the page is served and deployed.
+A compact, interactive diagram of how the page is served and deployed. It sits in a `<details>` disclosure: open from 1024px up (set by JS), folded on smaller screens so proof of work comes sooner; opening it plays the request trace.
 - **Lanes:** two labelled rows (request, deploy), each a five-column grid: node, wire, node, wire, node. Nodes in a lane stretch to equal height; wires centre between them.
 - **Node:** a button with a 10px radius, Hairline border, Daylight Canvas fill, a 0.8125rem 500 name and a short, non-wrapping Geist Mono sub-label in muted. Hover strengthens the border; pressed (`aria-pressed`) takes a cobalt border and Cobalt Wash fill. Hover or focus previews a caption; click pins it.
 - **Wire:** 20px 1px Hairline Strong line with an arrowhead; 12px wide below 420px, where nodes also tighten.
-- **Caption well:** Raised Mist, 8px radius, muted 0.8125rem relaxed text, `aria-live="polite"`, minimum height reserved so the panel never jumps.
-- **Trace:** a one-shot pass along a lane: each node's border flashes to ink with a 3px Raised Mist halo (900ms) while each wire fills left to right in ink (380ms), staggered 0 / 220 / 480 / 700 / 960ms. The request lane plays once 900ms after load; the deploy lane replays on pointer or keyboard entry. Never runs under reduced motion.
+- **Caption well:** Raised Mist, 8px radius, muted 0.8125rem relaxed text; it announces focus and click changes (`aria-live="polite"`) but not pointer hover; minimum height reserved so the panel never jumps. The default caption ends with a plain hint that the steps can be picked. The disclosure summary label is ink, not muted, and the panel's plain-language subtitle is ink too, so a recruiter reads the outcome before the data rows.
+- **Trace:** a one-shot pass along a lane: each node's border flashes to ink with a 3px Raised Mist halo (900ms) while each wire fills left to right in ink and then fades back to the resting hairline (1100ms; filled by about 35%), so both lanes always rest in the same state, staggered 0 / 220 / 480 / 700 / 960ms. The request lane plays once 900ms after load; the deploy lane replays on pointer or keyboard entry. Never runs under reduced motion.
 
 ### Ruled Lists
 Repeating content (projects, experience, skills) is never carded. Rows are separated by 1px Hairline rules with a closing rule at the end. Projects place a mono date and plain-text context in a left gutter; experience places a mono date in a 9rem gutter; skill columns sit under a 1px ink rule with a muted item list. Bullet markers are Hairline Strong.
@@ -335,7 +341,7 @@ Ink text with a 1px Hairline Strong underline at 0.2em offset; the underline tur
 - **Do** define every colour as a `--c-*` variable with both a light and a dark value; let dark mode follow `prefers-color-scheme`.
 - **Do** set real data (SHA, region, dates, protocols) in Geist Mono with tabular numerals, and everything else in Geist.
 - **Do** build repeating content as ruled rows with a metadata gutter, so the projects list can grow from two to four entries without a redesign.
-- **Do** show unfinished things honestly: a dashed pending control, a hollow amber ring for in-progress, a dashed muted ring for planned.
+- **Do** show unfinished things honestly: a plain "CV: wkrótce" text line and one hollow-amber "coming" row for unreleased projects.
 - **Do** use inline SVG icons from one sprite, 24-unit viewBox, 2px round strokes, in `currentColor`.
 - **Do** keep content visible by default and animate only transform (settle from 6px below over 800ms, staggered 70ms), with `cubic-bezier(0.16, 1, 0.3, 1)` and 160ms for state changes.
 - **Do** give every button, nav control and diagram node at least 44px of height; inline text links are the exception.

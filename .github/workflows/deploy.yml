@@ -44,6 +44,10 @@ jobs:
             -e "s/__DEPLOYED_AT__/${NOW_HUMAN}/g" \
             -e "s/__DEPLOYED_ISO__/${NOW_ISO}/g" \
             website/index.html
+          if grep -qE '__(COMMIT|DEPLOYED)_' website/index.html; then
+            echo "::error file=website/index.html::Unstamped deploy placeholders left in the page"
+            exit 1
+          fi
 
       - name: Configure AWS Credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4

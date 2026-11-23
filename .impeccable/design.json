@@ -4,65 +4,349 @@
   "title": "Design System: czepiel.dev",
   "extensions": {
     "colorMeta": {
-      "cobalt": { "role": "primary", "displayName": "Signal Cobalt", "canonical": "#2747e0", "cssVar": "--c-accent", "darkValue": "#3d5df2", "tonalRamp": ["#0d1a5c", "#15268a", "#1d39c2", "#2747e0", "#5470ea", "#8c9ff2", "#c3cdf9", "#eef1fe"] },
-      "cobalt-pressed": { "role": "primary", "displayName": "Pressed Cobalt", "canonical": "#1d39c2", "cssVar": "--c-accent-hover", "darkValue": "#2f4fd9" },
-      "cobalt-wash": { "role": "primary", "displayName": "Cobalt Wash", "canonical": "#eef1fe", "cssVar": "--c-accent-soft", "darkValue": "#161d3a" },
-      "on-cobalt": { "role": "primary", "displayName": "On Cobalt", "canonical": "#ffffff", "cssVar": "--c-on-accent", "darkValue": "#ffffff" },
-      "live-green": { "role": "secondary", "displayName": "Live Green", "canonical": "#16a34a", "cssVar": "--c-ok", "darkValue": "#22c55e", "tonalRamp": ["#0b3d1d", "#0f5a2a", "#13773a", "#16a34a", "#22c55e", "#4ade80", "#a7f0c2", "#e8fbef"] },
-      "live-green-text": { "role": "secondary", "displayName": "Live Green Text", "canonical": "#13773a", "cssVar": "--c-ok-text", "darkValue": "#4ade80" },
-      "building-amber-text": { "role": "tertiary", "displayName": "Building Amber", "canonical": "#8a5a00", "cssVar": "--c-warn-text", "darkValue": "#f0b44c", "tonalRamp": ["#3a2600", "#5e3d00", "#8a5a00", "#b47a0c", "#d99a2a", "#f0b44c", "#f8d99a", "#fdf3df"] },
-      "daylight-canvas": { "role": "neutral", "displayName": "Daylight Canvas", "canonical": "#fafafa", "cssVar": "--c-bg", "darkValue": "#0a0b0d", "tonalRamp": ["#0b0d12", "#23262d", "#565c68", "#9ca2ad", "#cfd2d8", "#e4e5e8", "#f4f4f5", "#fafafa"] },
-      "paper-surface": { "role": "neutral", "displayName": "Paper Surface", "canonical": "#ffffff", "cssVar": "--c-surface", "darkValue": "#111318" },
-      "raised-mist": { "role": "neutral", "displayName": "Raised Mist", "canonical": "#f4f4f5", "cssVar": "--c-raised", "darkValue": "#181b21" },
-      "graphite-ink": { "role": "neutral", "displayName": "Graphite Ink", "canonical": "#0b0d12", "cssVar": "--c-fg", "darkValue": "#ececef" },
-      "slate-muted": { "role": "neutral", "displayName": "Slate Muted", "canonical": "#565c68", "cssVar": "--c-muted", "darkValue": "#9ca2ad" },
-      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#e4e5e8", "cssVar": "--c-line", "darkValue": "#23262d" },
-      "hairline-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "#cfd2d8", "cssVar": "--c-line-strong", "darkValue": "#333741" },
-      "cobalt-dark": { "role": "primary", "displayName": "Signal Cobalt (dark scheme)", "canonical": "#3d5df2", "cssVar": "--c-accent" },
-      "cobalt-pressed-dark": { "role": "primary", "displayName": "Pressed Cobalt (dark scheme)", "canonical": "#2f4fd9", "cssVar": "--c-accent-hover" },
-      "cobalt-wash-dark": { "role": "primary", "displayName": "Cobalt Wash (dark scheme)", "canonical": "#161d3a", "cssVar": "--c-accent-soft" },
-      "live-green-dark": { "role": "secondary", "displayName": "Live Green (dark scheme)", "canonical": "#22c55e", "cssVar": "--c-ok" },
-      "live-green-text-dark": { "role": "secondary", "displayName": "Live Green Text (dark scheme)", "canonical": "#4ade80", "cssVar": "--c-ok-text" },
-      "building-amber-text-dark": { "role": "tertiary", "displayName": "Building Amber (dark scheme)", "canonical": "#f0b44c", "cssVar": "--c-warn-text" },
-      "night-canvas": { "role": "neutral", "displayName": "Night Canvas", "canonical": "#0a0b0d", "cssVar": "--c-bg", "tonalRamp": ["#0a0b0d", "#111318", "#181b21", "#23262d", "#333741", "#6b717c", "#9ca2ad", "#ececef"] },
-      "night-surface": { "role": "neutral", "displayName": "Night Surface", "canonical": "#111318", "cssVar": "--c-surface" },
-      "night-raised": { "role": "neutral", "displayName": "Night Raised", "canonical": "#181b21", "cssVar": "--c-raised" },
-      "night-ink": { "role": "neutral", "displayName": "Night Ink", "canonical": "#ececef", "cssVar": "--c-fg" },
-      "night-muted": { "role": "neutral", "displayName": "Night Muted", "canonical": "#9ca2ad", "cssVar": "--c-muted" },
-      "night-hairline": { "role": "neutral", "displayName": "Night Hairline", "canonical": "#23262d", "cssVar": "--c-line" },
-      "night-hairline-strong": { "role": "neutral", "displayName": "Night Hairline Strong", "canonical": "#333741", "cssVar": "--c-line-strong" }
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Signal Cobalt",
+        "canonical": "#2747e0",
+        "cssVar": "--c-accent",
+        "darkValue": "#3d5df2",
+        "tonalRamp": [
+          "#0d1a5c",
+          "#15268a",
+          "#1d39c2",
+          "#2747e0",
+          "#5470ea",
+          "#8c9ff2",
+          "#c3cdf9",
+          "#eef1fe"
+        ]
+      },
+      "cobalt-pressed": {
+        "role": "primary",
+        "displayName": "Pressed Cobalt",
+        "canonical": "#1d39c2",
+        "cssVar": "--c-accent-hover",
+        "darkValue": "#2f4fd9"
+      },
+      "cobalt-wash": {
+        "role": "primary",
+        "displayName": "Cobalt Wash",
+        "canonical": "#eef1fe",
+        "cssVar": "--c-accent-soft",
+        "darkValue": "#161d3a"
+      },
+      "on-cobalt": {
+        "role": "primary",
+        "displayName": "On Cobalt",
+        "canonical": "#ffffff",
+        "cssVar": "--c-on-accent",
+        "darkValue": "#ffffff"
+      },
+      "live-green": {
+        "role": "secondary",
+        "displayName": "Live Green",
+        "canonical": "#16a34a",
+        "cssVar": "--c-ok",
+        "darkValue": "#22c55e",
+        "tonalRamp": [
+          "#0b3d1d",
+          "#0f5a2a",
+          "#13773a",
+          "#16a34a",
+          "#22c55e",
+          "#4ade80",
+          "#a7f0c2",
+          "#e8fbef"
+        ]
+      },
+      "live-green-text": {
+        "role": "secondary",
+        "displayName": "Live Green Text",
+        "canonical": "#13773a",
+        "cssVar": "--c-ok-text",
+        "darkValue": "#4ade80"
+      },
+      "building-amber-text": {
+        "role": "tertiary",
+        "displayName": "Building Amber",
+        "canonical": "#8a5a00",
+        "cssVar": "--c-warn-text",
+        "darkValue": "#f0b44c",
+        "tonalRamp": [
+          "#3a2600",
+          "#5e3d00",
+          "#8a5a00",
+          "#b47a0c",
+          "#d99a2a",
+          "#f0b44c",
+          "#f8d99a",
+          "#fdf3df"
+        ]
+      },
+      "daylight-canvas": {
+        "role": "neutral",
+        "displayName": "Daylight Canvas",
+        "canonical": "#fafafa",
+        "cssVar": "--c-bg",
+        "darkValue": "#0a0b0d",
+        "tonalRamp": [
+          "#0b0d12",
+          "#23262d",
+          "#565c68",
+          "#9ca2ad",
+          "#cfd2d8",
+          "#e4e5e8",
+          "#f4f4f5",
+          "#fafafa"
+        ]
+      },
+      "paper-surface": {
+        "role": "neutral",
+        "displayName": "Paper Surface",
+        "canonical": "#ffffff",
+        "cssVar": "--c-surface",
+        "darkValue": "#111318"
+      },
+      "raised-mist": {
+        "role": "neutral",
+        "displayName": "Raised Mist",
+        "canonical": "#f4f4f5",
+        "cssVar": "--c-raised",
+        "darkValue": "#181b21"
+      },
+      "graphite-ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "#0b0d12",
+        "cssVar": "--c-fg",
+        "darkValue": "#ececef"
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#565c68",
+        "cssVar": "--c-muted",
+        "darkValue": "#9ca2ad"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e4e5e8",
+        "cssVar": "--c-line",
+        "darkValue": "#23262d"
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#cfd2d8",
+        "cssVar": "--c-line-strong",
+        "darkValue": "#333741"
+      },
+      "cobalt-dark": {
+        "role": "primary",
+        "displayName": "Signal Cobalt (dark scheme)",
+        "canonical": "#3d5df2",
+        "cssVar": "--c-accent"
+      },
+      "cobalt-pressed-dark": {
+        "role": "primary",
+        "displayName": "Pressed Cobalt (dark scheme)",
+        "canonical": "#2f4fd9",
+        "cssVar": "--c-accent-hover"
+      },
+      "cobalt-wash-dark": {
+        "role": "primary",
+        "displayName": "Cobalt Wash (dark scheme)",
+        "canonical": "#161d3a",
+        "cssVar": "--c-accent-soft"
+      },
+      "live-green-dark": {
+        "role": "secondary",
+        "displayName": "Live Green (dark scheme)",
+        "canonical": "#22c55e",
+        "cssVar": "--c-ok"
+      },
+      "live-green-text-dark": {
+        "role": "secondary",
+        "displayName": "Live Green Text (dark scheme)",
+        "canonical": "#4ade80",
+        "cssVar": "--c-ok-text"
+      },
+      "building-amber-text-dark": {
+        "role": "tertiary",
+        "displayName": "Building Amber (dark scheme)",
+        "canonical": "#f0b44c",
+        "cssVar": "--c-warn-text"
+      },
+      "night-canvas": {
+        "role": "neutral",
+        "displayName": "Night Canvas",
+        "canonical": "#0a0b0d",
+        "cssVar": "--c-bg",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#111318",
+          "#181b21",
+          "#23262d",
+          "#333741",
+          "#6b717c",
+          "#9ca2ad",
+          "#ececef"
+        ]
+      },
+      "night-surface": {
+        "role": "neutral",
+        "displayName": "Night Surface",
+        "canonical": "#111318",
+        "cssVar": "--c-surface"
+      },
+      "night-raised": {
+        "role": "neutral",
+        "displayName": "Night Raised",
+        "canonical": "#181b21",
+        "cssVar": "--c-raised"
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#ececef",
+        "cssVar": "--c-fg"
+      },
+      "night-muted": {
+        "role": "neutral",
+        "displayName": "Night Muted",
+        "canonical": "#9ca2ad",
+        "cssVar": "--c-muted"
+      },
+      "night-hairline": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "#23262d",
+        "cssVar": "--c-line"
+      },
+      "night-hairline-strong": {
+        "role": "neutral",
+        "displayName": "Night Hairline Strong",
+        "canonical": "#333741",
+        "cssVar": "--c-line-strong"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The name in the hero. One per page." },
-      "display-closing": { "displayName": "Display Closing", "purpose": "The closing contact question." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles." },
-      "title": { "displayName": "Title", "purpose": "Project names in the ruled project list." },
-      "title-sm": { "displayName": "Title Small", "purpose": "Experience entries." },
-      "positioning": { "displayName": "Positioning", "purpose": "One-sentence positioning line under the name; 1.25rem below 768px, muted." },
-      "lede": { "displayName": "Lede", "purpose": "Section ledes and project descriptions, muted, max 40rem." },
-      "body": { "displayName": "Body", "purpose": "Entry descriptions and bullet lists, max 40rem." },
-      "body-sm": { "displayName": "Body Small", "purpose": "Buttons, meta rows, organisation lines." },
-      "label": { "displayName": "Label", "purpose": "Chips, panel subtitles, diagram heading, node names." },
-      "data": { "displayName": "Data (Geist Mono)", "purpose": "Machine values only: commit SHA, region, protocols, dates." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero. One per page."
+      },
+      "display-closing": {
+        "displayName": "Display Closing",
+        "purpose": "The closing contact question."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project names in the ruled project list."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Experience entries."
+      },
+      "positioning": {
+        "displayName": "Positioning",
+        "purpose": "One-sentence positioning line under the name; 1.25rem below 768px, muted."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section ledes and project descriptions, muted, max 40rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Entry descriptions and bullet lists, max 40rem."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Buttons, meta rows, organisation lines."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Chips, panel subtitles, diagram heading, node names."
+      },
+      "data": {
+        "displayName": "Data (Geist Mono)",
+        "purpose": "Machine values only: commit SHA, region, protocols, dates."
+      }
     },
     "shadows": [
-      { "name": "panel-lift", "value": "0 1px 2px rgb(11 13 18 / 0.04), 0 12px 32px -12px rgb(11 13 18 / 0.12)", "darkValue": "0 1px 2px rgb(0 0 0 / 0.4), 0 16px 40px -16px rgb(0 0 0 / 0.7)", "cssVar": "--shadow-panel", "purpose": "The deploy panel only; the one lifted object." },
-      { "name": "trace-halo", "value": "0 0 0 3px var(--c-raised)", "purpose": "Transient ring on a diagram node while the path trace passes; none at rest." }
+      {
+        "name": "panel-lift",
+        "value": "0 1px 2px rgb(11 13 18 / 0.04), 0 12px 32px -12px rgb(11 13 18 / 0.12)",
+        "darkValue": "0 1px 2px rgb(0 0 0 / 0.4), 0 16px 40px -16px rgb(0 0 0 / 0.7)",
+        "cssVar": "--shadow-panel",
+        "purpose": "The deploy panel only; the one lifted object."
+      },
+      {
+        "name": "trace-halo",
+        "value": "0 0 0 3px var(--c-raised)",
+        "purpose": "Transient ring on a diagram node while the path trace passes; none at rest."
+      }
     ],
     "motion": [
-      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "cssVar": "--ease-out-expo", "purpose": "The only easing curve in the system." },
-      { "name": "state", "value": "160ms", "purpose": "Colour, border and press transitions on buttons, nav links and nodes." },
-      { "name": "settle", "value": "800ms; translateY(6px) to none; delay index * 70ms + 60ms", "purpose": "One orchestrated load for the deploy panel header, rows and diagram. Transform only; content is visible without it. Disabled under reduced motion." },
-      { "name": "trace-node-hit", "value": "900ms; offsets 0 / 480 / 960ms", "purpose": "Node border flashes to ink with a halo as the path trace passes." },
-      { "name": "trace-wire-fill", "value": "380ms; offsets 220 / 700ms; scaleX 0 to 1 from left", "purpose": "Wire fills with ink between nodes. Request lane plays once 900ms after load; deploy lane on pointer/focus entry. Never under reduced motion." },
-      { "name": "status-pulse", "value": "2.4s infinite; scale 1 to 2.8, opacity 0.55 to 0", "purpose": "The only looping motion: the live status dot. Removed under reduced motion." },
-      { "name": "smooth-scroll", "value": "scroll-behavior: smooth; scroll-padding-top 5rem", "purpose": "Anchor navigation; only when motion is tolerated." }
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "cssVar": "--ease-out-expo",
+        "purpose": "The only easing curve in the system."
+      },
+      {
+        "name": "state",
+        "value": "160ms",
+        "purpose": "Colour, border and press transitions on buttons, nav links and nodes."
+      },
+      {
+        "name": "settle",
+        "value": "800ms; translateY(6px) to none; delay index * 70ms + 60ms",
+        "purpose": "One orchestrated load for the deploy panel header, rows and diagram. Transform only; content is visible without it. Disabled under reduced motion."
+      },
+      {
+        "name": "trace-node-hit",
+        "value": "900ms; offsets 0 / 480 / 960ms",
+        "purpose": "Node border flashes to ink with a halo as the path trace passes."
+      },
+      {
+        "name": "trace-wire-fill",
+        "value": "380ms; offsets 220 / 700ms; scaleX 0 to 1 from left",
+        "purpose": "Wire fills with ink between nodes. Request lane plays once 900ms after load; deploy lane on pointer/focus entry. Never under reduced motion."
+      },
+      {
+        "name": "status-pulse",
+        "value": "2.4s infinite; scale 1 to 2.8, opacity 0.55 to 0",
+        "purpose": "The only looping motion: the live status dot. Removed under reduced motion."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "scroll-behavior: smooth; scroll-padding-top 5rem",
+        "purpose": "Anchor navigation; only when motion is tolerated."
+      }
     ],
     "breakpoints": [
-      { "name": "flow-compact", "value": "420px", "purpose": "max-width: below this, diagram nodes and wires tighten." },
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" }
+      {
+        "name": "flow-compact",
+        "value": "420px",
+        "purpose": "max-width: below this, diagram nodes and wires tighten."
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
     ]
   },
   "components": [
@@ -78,17 +362,9 @@
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Outbound profile links (GitHub, LinkedIn). Surface fill, strong hairline border.",
+      "description": "Outbound profile links (GitHub, LinkedIn). Quiet: transparent, hairline border, muted text; ink on hover.",
       "html": "<a class=\"ds-btn2\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>LinkedIn</a>",
-      "css": ".ds-btn2 { display: inline-flex; align-items: center; gap: 0.5rem; height: 2.75rem; padding-inline: 1.125rem; border-radius: 0.625rem; font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; text-decoration: none; border: 1px solid var(--c-line-strong, #cfd2d8); background: var(--c-surface, #fff); color: var(--c-fg, #0b0d12); transition: background-color 160ms cubic-bezier(0.16,1,0.3,1), border-color 160ms cubic-bezier(0.16,1,0.3,1), transform 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn2 svg { width: 1.0625rem; height: 1.0625rem; } .ds-btn2:hover { background: var(--c-raised, #f4f4f5); border-color: var(--c-muted, #565c68); } .ds-btn2:active { transform: translateY(1px); } .ds-btn2:focus-visible { outline: 2px solid var(--c-accent, #2747e0); outline-offset: 3px; }"
-    },
-    {
-      "name": "Pending Button",
-      "kind": "button",
-      "refersTo": "button-pending",
-      "description": "An action that does not exist yet (CV). Dashed border, muted, inert, with a title explaining why.",
-      "html": "<span class=\"ds-btn-pending\" role=\"link\" aria-disabled=\"true\" title=\"CV w przygotowaniu\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/></svg>CV wkrótce</span>",
-      "css": ".ds-btn-pending { display: inline-flex; align-items: center; gap: 0.5rem; height: 2.75rem; padding-inline: 1.125rem; border-radius: 0.625rem; font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; cursor: not-allowed; color: var(--c-muted, #565c68); background: transparent; border: 1px dashed var(--c-line-strong, #cfd2d8); } .ds-btn-pending svg { width: 1.0625rem; height: 1.0625rem; }"
+      "css": ".ds-btn2 { display: inline-flex; align-items: center; gap: 0.5rem; height: 2.75rem; padding-inline: 1.125rem; border-radius: 0.625rem; font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; text-decoration: none; border: 1px solid var(--c-line, #e4e5e8); background: transparent; color: var(--c-muted, #565c68); transition: background-color 160ms cubic-bezier(0.16,1,0.3,1), border-color 160ms cubic-bezier(0.16,1,0.3,1), transform 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn2 svg { width: 1.0625rem; height: 1.0625rem; } .ds-btn2:hover { background: var(--c-raised, #f4f4f5); border-color: var(--c-line-strong, #cfd2d8); color: var(--c-fg, #0b0d12); } .ds-btn2:active { transform: translateY(1px); } .ds-btn2:focus-visible { outline: 2px solid var(--c-accent, #2747e0); outline-offset: 3px; }"
     },
     {
       "name": "Navigation",
@@ -141,7 +417,7 @@
   ],
   "narrative": {
     "northStar": "The Live Deploy Page",
-    "overview": "czepiel.dev is built in the dev-tool product canon at the craft level of Vercel and Linear, played straight: a daylight surface of crisp neutrals, hairline structure, one cobalt accent and one green signal for live things. The product being sold is a person, and the proof is the page itself: a framed deploy panel with real commit, origin and pipeline data, and a small architecture diagram the visitor can interrogate. Everything else is set as calm, ruled editorial lists so the panel is the one object that reads as \"product\".\n\nDensity is moderate and recruiter-paced: large display type for the name, generous section spacing (80px, 112px from 768px), and content held to readable measures (around 40rem for prose). Dark mode is not a separate design; it is the same token set re-valued under `prefers-color-scheme: dark`, with no manual toggle. Motion is one orchestrated settle on load plus a one-shot path trace; nothing loops except the live status dot.\n\nThe system replaces an earlier terminal costume (monospace everywhere, `// HEADINGS`, hashtag badges, typewriter cursor), which the user retired. It also refuses the generic student template: a centred name over a grid of equal cards.",
+    "overview": "czepiel.dev is built in the dev-tool product canon at the craft level of Vercel and Linear, played straight: a daylight surface of crisp neutrals, hairline structure, one cobalt accent and one green signal for live things. The product being sold is a person, and the proof is the page itself: a framed deploy panel with real commit, origin and pipeline data, and a small architecture diagram the visitor can interrogate. Everything else is set as calm, ruled editorial lists so the panel is the one object that reads as \"product\".\n\nDensity is moderate and recruiter-paced: large display type for the name, skim-paced section spacing (64px, 80px from 768px), and content held to readable measures (around 40rem for prose). Dark mode is not a separate design; it is the same token set re-valued under `prefers-color-scheme: dark`, with no manual toggle. Motion is one orchestrated settle on load plus a one-shot path trace; nothing loops except the live status dot.\n\nThe system replaces an earlier terminal costume (monospace everywhere, `// HEADINGS`, hashtag badges, typewriter cursor), which the user retired. It also refuses the generic student template: a centred name over a grid of equal cards.",
     "keyCharacteristics": [
       "Light-first neutrals with a system-following dark mode; every color is a CSS custom property re-valued per scheme.",
       "One accent (cobalt) reserved for the action, focus, text selection and the pressed diagram node.",
@@ -151,12 +427,36 @@
       "Exponential ease-out on everything; full reduced-motion fallbacks."
     ],
     "rules": [
-      { "name": "The Cobalt Is a Verb Rule", "body": "Cobalt appears only where the visitor acts or where the system marks focus or selection: the primary button, the focus ring, `::selection`, the pressed node, the skip link. Headings, links, icons, chips and decoration never take it. Text links are ink with a hairline-strong underline.", "section": "colors" },
-      { "name": "The Green Means Live Rule", "body": "Green is spent only on things that are actually live right now (the site is online, the availability is open). Amber marks work in progress; a dashed muted ring marks planned work. These three states never borrow each other's colour.", "section": "colors" },
-      { "name": "The One Variable Rule", "body": "Every colour is a `--c-*` custom property defined once for light and once for dark, exposed to Tailwind through `@theme`. Never hard-code a hex in markup; inline SVG uses `var(--c-*)` too.", "section": "colors" },
-      { "name": "The Mono Is Data Rule", "body": "Geist Mono is reserved for values a machine would print: hashes, regions, protocols, dates. Words inside a mono slot switch back to sans (e.g. \"w produkcji\" inside a date line, the pipeline row). Never set headings, labels or prose in mono.", "section": "typography" },
-      { "name": "The Sentence Case Rule", "body": "Every heading and label is sentence case at normal tracking. No uppercase tracked labels above headings.", "section": "typography" },
-      { "name": "The One Lifted Object Rule", "body": "Only the live \"this page\" panel casts a shadow, because it is the product demo. Lists, chips, buttons and nodes stay flat; if another surface wants elevation, it is probably a second card that should be a ruled row.", "section": "elevation" }
+      {
+        "name": "The Cobalt Is a Verb Rule",
+        "body": "Cobalt appears only where the visitor acts or where the system marks focus or selection: the primary button, the focus ring, `::selection`, the pressed node, the skip link. Headings, links, icons, chips and decoration never take it. Text links are ink with a hairline-strong underline.",
+        "section": "colors"
+      },
+      {
+        "name": "The Green Means Live Rule",
+        "body": "Green is spent only on things that are actually live right now (the site is online, the availability is open). Amber marks work in progress. These states never borrow each other's colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Variable Rule",
+        "body": "Every colour is a `--c-*` custom property defined once for light and once for dark, exposed to Tailwind through `@theme`. Never hard-code a hex in markup; inline SVG uses `var(--c-*)` too.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Is Data Rule",
+        "body": "Geist Mono is reserved for values a machine would print: hashes, regions, protocols, dates. Words inside a mono slot switch back to sans (e.g. \"w produkcji\" inside a date line, the pipeline row). Never set headings, labels or prose in mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every heading and label is sentence case at normal tracking. No uppercase tracked labels above headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Lifted Object Rule",
+        "body": "Only the live \"this page\" panel casts a shadow, because it is the product demo. Lists, chips, buttons and nodes stay flat; if another surface wants elevation, it is probably a second card that should be a ruled row.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "**Do** keep cobalt to the primary button, focus ring, selection and the pressed node (The Cobalt Is a Verb Rule).",

@@ -96,10 +96,12 @@
     border-radius: 6px;
   }
   a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
-  h1, h2, h3 { text-wrap: balance; }
+  h1, h2, h3, h4 { text-wrap: balance; }
   p, li { text-wrap: pretty; }
   code, .tabular { font-variant-numeric: tabular-nums; }
   html { scrollbar-color: var(--c-line-strong) transparent; }
+  /* EN visitors (saved choice or non-Polish browser): hold paint until the dictionary is applied (head script adds this, max 1.5s). */
+  .i18n-pending body { visibility: hidden; }
 }
 
 @layer components {
@@ -120,12 +122,15 @@
   .btn svg { width: 1.0625rem; height: 1.0625rem; flex: none; }
   .btn-primary { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
   .btn-primary:hover { background: var(--c-accent-hover); border-color: var(--c-accent-hover); }
-  .btn[aria-disabled="true"] {
-    cursor: not-allowed; color: var(--c-muted); background: transparent;
-    border-style: dashed; border-color: var(--c-line-strong);
-  }
-  .btn[aria-disabled="true"]:hover { background: transparent; border-color: var(--c-line-strong); }
-  .btn[aria-disabled="true"]:active { transform: none; }
+  /* Quiet secondary: profile links step back so the email action leads. */
+  .btn-quiet { background: transparent; border-color: var(--c-line); color: var(--c-muted); }
+  .btn-quiet:hover { background: var(--c-raised); border-color: var(--c-line-strong); color: var(--c-fg); }
+  /* Square icon button (copy email); swaps to a check for 2s after copying. */
+  .btn-icon { width: 2.75rem; padding-inline: 0; justify-content: center; }
+  .btn-icon .i-done { display: none; }
+  .btn-icon.is-done { color: var(--c-ok-text); }
+  .btn-icon.is-done .i-idle { display: none; }
+  .btn-icon.is-done .i-done { display: block; }
 
   .nav-link {
     display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: 0.75rem;
@@ -142,7 +147,7 @@
 
   .status-dot { position: relative; display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--c-ok); flex: none; }
   @media (prefers-reduced-motion: no-preference) {
-    .status-dot::after {
+    .status-dot:not(.still)::after {
       content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--c-ok);
       animation: pulse-ring 2.4s var(--ease-out-expo) infinite;
     }
@@ -157,6 +162,15 @@
   .panel-row { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; align-items: baseline; padding: 0.6875rem 1.25rem; border-top: 1px solid var(--c-line); font-size: 0.875rem; }
   .panel-row dt { color: var(--c-muted); }
   .panel-row dd { font-family: var(--font-mono); font-size: 0.8125rem; min-width: 0; overflow-wrap: anywhere; }
+  @media (max-width: 420px) { .panel-row { grid-template-columns: 6.25rem 1fr; gap: 0.75rem; } }
+
+  /* Architecture disclosure: open on desktop (JS), folded on phones so proof comes sooner. */
+  .arch > summary { list-style: none; cursor: pointer; }
+  .arch > summary::-webkit-details-marker { display: none; }
+  .arch > summary:focus-visible { outline-offset: -2px; border-radius: 0; }
+  .arch > summary:hover .arch-label { color: var(--c-fg); }
+  .arch .chev { transition: transform 200ms var(--ease-out-expo); }
+  .arch[open] .chev { transform: rotate(180deg); }
 
   /* Architecture flow */
   .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; gap: 0.25rem; }
@@ -180,20 +194,24 @@
   }
   /* Path trace: plays once along a lane, then rests. Only runs when JS adds .trace (never under reduced motion). */
   .flow.trace > :nth-child(1) { animation: node-hit 900ms var(--ease-out-expo) 0ms; }
-  .flow.trace > :nth-child(2)::before { animation: wire-fill 380ms var(--ease-out-expo) 220ms forwards; }
+  .flow.trace > :nth-child(2)::before { animation: wire-fill 1100ms var(--ease-out-expo) 220ms; }
   .flow.trace > :nth-child(3) { animation: node-hit 900ms var(--ease-out-expo) 480ms; }
-  .flow.trace > :nth-child(4)::before { animation: wire-fill 380ms var(--ease-out-expo) 700ms forwards; }
+  .flow.trace > :nth-child(4)::before { animation: wire-fill 1100ms var(--ease-out-expo) 700ms; }
   .flow.trace > :nth-child(5) { animation: node-hit 900ms var(--ease-out-expo) 960ms; }
   @keyframes node-hit {
     0% { border-color: var(--c-line); }
     25% { border-color: var(--c-fg); box-shadow: 0 0 0 3px var(--c-raised); }
     100% { border-color: var(--c-line); box-shadow: none; }
   }
-  @keyframes wire-fill { to { transform: scaleX(1); } }
+  @keyframes wire-fill {
+    0% { transform: scaleX(0); opacity: 1; }
+    35% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0; }
+  }
 
   /* Section scaffolding */
-  .section { padding-block: 5rem; border-top: 1px solid var(--c-line); }
-  @media (min-width: 768px) { .section { padding-block: 7rem; } }
+  .section { padding-block: 4rem; border-top: 1px solid var(--c-line); }
+  @media (min-width: 768px) { .section { padding-block: 5rem; } }
   .section-title { font-size: clamp(1.75rem, 3.2vw, 2.5rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; }
   .section-lede { margin-top: 0.75rem; color: var(--c-muted); max-width: 40rem; font-size: 1.0625rem; line-height: 1.6; }
 

@@ -78,6 +78,7 @@ Source: the user's LinkedIn export, `linkedin-portfolio-info.md` (as of 2026-11-
   - Confirmed on LinkedIn: Linux administration, infrastructure management, AWS, cloud management, technical support, hardware diagnostics, teamwork, communication.
   - Shown by this repo: Terraform, GitHub Actions / CI/CD.
   - Confirmed by the user on 2026-11-23: Python, Docker, LLM / generative AI, C++17, Bash, SQL.
+  - **Docker is kept off the page** (user decision, 2026-11-23) until a shipped project shows it; every listed skill must link to its proof.
 - **Absent, and not to be invented:** testimonials, references, metrics, traffic numbers, blog posts, Avida's feature list, and any detail of the upcoming projects. Leave the seasonal non-technical job off the portfolio.
 
 ## Product Principles

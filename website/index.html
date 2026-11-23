@@ -18,6 +18,7 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="preload" href="./fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="./style.css" />
+  <script>(function(){var s=null;try{s=localStorage.getItem("czepiel_lang")}catch(e){}var l=s==="en"||s==="pl"?s:((navigator.language||"pl").toLowerCase().indexOf("pl")===0?"pl":"en");if(l==="en"){var h=document.documentElement;h.lang="en";h.classList.add("i18n-pending");setTimeout(function(){h.classList.remove("i18n-pending")},1500)}})();</script>
 </head>
 <body class="bg-bg text-fg">
 
@@ -34,6 +35,9 @@
       <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m16 9-5.5 5.5L8 12"/></symbol>
       <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
       <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
       <symbol id="i-commit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h6M15 12h6"/></symbol>
     </defs>
   </svg>
@@ -46,12 +50,12 @@
         <span>czepiel.dev</span>
       </a>
       <nav aria-label="Główna" data-i18n-aria="nav_aria" class="flex items-center">
+        <a class="nav-link" href="#projects" data-i18n="nav_projects">Projekty</a>
         <div class="hidden items-center md:flex">
-          <a class="nav-link" href="#projects" data-i18n="nav_projects">Projekty</a>
           <a class="nav-link" href="#experience" data-i18n="nav_exp">Doświadczenie</a>
           <a class="nav-link" href="#skills" data-i18n="nav_skills">Umiejętności</a>
+          <a class="nav-link" href="#contact" data-i18n="nav_contact">Kontakt</a>
         </div>
-        <a class="nav-link" href="#contact" data-i18n="nav_contact">Kontakt</a>
         <button id="lang-toggle" type="button" class="nav-link ml-1 gap-1.5 border border-line font-medium text-fg" aria-label="Switch to English" lang="en">
           <span id="lang-label">EN</span>
         </button>
@@ -62,7 +66,7 @@
   <main id="main">
 
     <!-- HERO -->
-    <section id="hero" class="container-page grid gap-12 pb-20 pt-14 md:pt-20 lg:grid-cols-12 lg:gap-10 lg:pb-28 lg:pt-24" aria-labelledby="hero-name">
+    <section id="hero" class="container-page grid gap-12 pb-16 pt-14 md:pt-20 lg:grid-cols-12 lg:gap-10 lg:pb-20 lg:pt-24" aria-labelledby="hero-name">
       <div class="lg:col-span-7 lg:pt-6">
         <h1 id="hero-name" class="text-[clamp(3rem,8.5vw,5.75rem)] font-semibold leading-[0.95] tracking-[-0.04em]">Filip Czepiel</h1>
         <p class="mt-6 max-w-[34rem] text-xl leading-snug text-muted md:text-2xl md:leading-snug" data-i18n="positioning">
@@ -70,50 +74,56 @@
         </p>
 
         <p class="mt-8 inline-flex items-center gap-2.5 rounded-full border border-line bg-surface py-1.5 pl-3 pr-3.5 text-[0.9375rem] font-medium text-ok-text">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span data-i18n="status">Szukam stażu na lato 2027</span>
+          <span class="status-dot still" aria-hidden="true"></span>
+          <span data-i18n="status">Staż · lato 2027 · Cloud / DevOps / AI</span>
         </p>
 
         <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-[0.9375rem]">
-          <li><a class="text-link inline-flex items-center gap-2" href="https://www.credly.com/badges/49116c60-005f-4b99-bd33-87f067e0293f/public_url" target="_blank" rel="noreferrer" aria-label="AWS Certified Solutions Architect – Associate, zweryfikuj na Credly" data-i18n-aria="cert_aria"><svg class="h-[18px] w-[18px] text-muted" aria-hidden="true"><use href="#i-badge"/></svg><span>AWS Certified Solutions Architect – Associate</span><svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li class="flex flex-wrap items-center gap-x-2.5 gap-y-1"><a class="text-link inline-flex items-center gap-2 font-medium" href="https://www.credly.com/badges/49116c60-005f-4b99-bd33-87f067e0293f/public_url" target="_blank" rel="noreferrer" aria-label="AWS Certified Solutions Architect – Associate, zweryfikuj na Credly" data-i18n-aria="cert_aria"><svg class="h-[18px] w-[18px] text-muted" aria-hidden="true"><use href="#i-badge"/></svg><span>AWS Certified Solutions Architect – <span class="whitespace-nowrap">Associate<svg class="ml-1.5 inline h-3.5 w-3.5 align-[-0.125em] text-muted" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a><span class="meta hidden rounded-md border border-line px-1.5 leading-6 sm:inline-block">SAA-C03</span></li>
           <li class="flex items-center gap-2"><svg class="h-[18px] w-[18px] text-muted" aria-hidden="true"><use href="#i-cap"/></svg><span data-i18n="meta_uni">Politechnika Łódzka · Informatyka Stosowana</span></li>
           <li class="flex items-center gap-2"><svg class="h-[18px] w-[18px] text-muted" aria-hidden="true"><use href="#i-pin"/></svg><span>Łódź</span></li>
         </ul>
 
-        <div class="mt-10 flex flex-wrap gap-3">
-          <a id="cta-email" class="btn btn-primary" href="mailto:contact@czepiel.dev">
+        <div class="mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap" data-copy-row>
+          <div class="col-span-2 flex gap-3 sm:contents">
+          <a id="cta-email" class="btn btn-primary flex-1 justify-center sm:flex-none" href="mailto:contact@czepiel.dev">
             <svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="cta_email">Napisz do mnie</span>
           </a>
-          <a class="btn" href="https://github.com/filekk" target="_blank" rel="noreferrer">
+          <button type="button" class="btn btn-icon" data-copy="contact@czepiel.dev" aria-label="Kopiuj adres e-mail: contact@czepiel.dev" data-i18n-aria="copy_aria" title="contact@czepiel.dev">
+            <svg class="i-idle" aria-hidden="true"><use href="#i-copy"/></svg><svg class="i-done" aria-hidden="true"><use href="#i-check"/></svg>
+          </button>
+          </div>
+          <a class="btn btn-quiet justify-center" href="https://github.com/filekk" target="_blank" rel="noreferrer">
             <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub
           </a>
-          <a class="btn" href="https://www.linkedin.com/in/filip-czepiel-563749411/" target="_blank" rel="noreferrer">
+          <a class="btn btn-quiet justify-center" href="https://www.linkedin.com/in/filip-czepiel-563749411/" target="_blank" rel="noreferrer">
             <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
           </a>
-          <span class="btn" role="link" aria-disabled="true" title="CV w przygotowaniu" data-i18n-title="cv_title">
-            <svg aria-hidden="true"><use href="#i-file"/></svg><span data-i18n="cta_cv">CV wkrótce</span>
-          </span>
+          <p class="copy-fallback col-span-2 basis-full text-[0.9375rem] text-muted" data-copy-msg hidden></p>
         </div>
+        <p class="mt-4 flex items-center gap-2 text-[0.9375rem] text-muted">
+          <svg class="h-4 w-4 flex-none" aria-hidden="true"><use href="#i-file"/></svg><span data-i18n="cv_line">CV: wkrótce do pobrania</span>
+        </p>
       </div>
 
       <!-- THIS PAGE: deploy panel + architecture -->
-      <aside class="lg:col-span-5" aria-labelledby="panel-title">
+      <aside id="panel" class="scroll-mt-24 lg:col-span-5" aria-labelledby="panel-title">
         <div class="panel">
           <div class="settle flex items-center justify-between gap-3 px-5 py-4" style="--i:0">
             <div>
-              <h2 id="panel-title" class="text-[0.9375rem] font-semibold" data-i18n="panel_title">Ta strona</h2>
-              <p class="mt-0.5 text-[0.8125rem] text-muted" data-i18n="panel_sub">Działa na infrastrukturze, którą zbudowałem.</p>
+              <h2 id="panel-title" class="text-[0.9375rem] font-semibold" data-i18n="panel_title">Ta strona na AWS</h2>
+              <p class="mt-0.5 text-[0.8125rem] text-fg" data-i18n="panel_sub">Zbudowałem ją sam: prywatny hosting, automatyczne wdrożenia, zero stałych kluczy.</p>
             </div>
-            <span class="inline-flex items-center gap-2 rounded-full border border-line px-2.5 py-1 text-[0.8125rem] font-medium text-ok-text">
+            <span class="inline-flex items-center gap-2 text-[0.8125rem] font-medium text-ok-text">
               <span class="status-dot" aria-hidden="true"></span><span data-i18n="panel_status">Online</span>
             </span>
           </div>
           <dl>
             <div class="panel-row settle" style="--i:1">
               <dt data-i18n="row_commit">Commit</dt>
-              <dd><a class="text-link inline-flex items-center gap-1.5" data-deploy-link href="https://github.com/filekk/czepiel-dev/commit/__COMMIT_SHA__" target="_blank" rel="noreferrer"><svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-commit"/></svg><span data-deploy="sha">__COMMIT_SHORT__</span></a> <span class="text-muted">· main</span></dd>
+              <dd><a class="text-link inline-flex items-center gap-1.5" data-deploy-link href="https://github.com/filekk/czepiel-dev/commit/__COMMIT_SHA__" target="_blank" rel="noreferrer"><svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-commit"/></svg><span data-deploy="sha">__COMMIT_SHORT__</span></a> <span class="whitespace-nowrap text-muted">· main</span></dd>
             </div>
-            <div class="panel-row settle" style="--i:2">
+            <div class="panel-row settle hidden md:grid" style="--i:2">
               <dt data-i18n="row_deployed">Wdrożono</dt>
               <dd><time data-deploy="time" datetime="__DEPLOYED_ISO__">__DEPLOYED_AT__</time></dd>
             </div>
@@ -121,19 +131,37 @@
               <dt data-i18n="row_edge">Serwowane z</dt>
               <dd><span id="edge-pop"></span> <span class="text-muted" id="edge-cache"></span></dd>
             </div>
-            <div class="panel-row settle" style="--i:3">
-              <dt data-i18n="row_origin">Origin</dt>
+            <div class="panel-row settle hidden md:grid" style="--i:3">
+              <dt data-i18n="row_origin">Źródło</dt>
               <dd>S3 · eu-central-1</dd>
             </div>
-            <div class="panel-row settle" style="--i:4">
+            <div class="panel-row settle hidden md:grid" style="--i:4">
               <dt data-i18n="row_pipeline">Pipeline</dt>
-              <dd class="font-sans text-[0.875rem]">GitHub Actions → Terraform</dd>
+              <dd class="font-sans">GitHub Actions → Terraform</dd>
             </div>
           </dl>
 
-          <div class="settle border-t border-line px-5 pb-5 pt-4" style="--i:5">
-            <h3 class="text-[0.8125rem] font-medium text-muted" data-i18n="arch_title">Architektura: wskaż element</h3>
-            <p class="mt-3 text-[0.75rem] font-medium text-muted" id="lane-req" data-i18n="lane_request">Żądanie</p>
+          <details id="arch" class="arch settle border-t border-line" style="--i:5">
+            <summary class="flex min-h-[2.75rem] items-center justify-between gap-3 px-5 py-3 text-[0.8125rem] font-medium">
+              <span class="arch-label" data-i18n="arch_title">Jak działa ta strona</span>
+              <svg class="chev h-4 w-4 text-muted" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </summary>
+            <div class="px-5 pb-5">
+            <dl class="-mx-5 mb-4 border-b border-line md:hidden">
+              <div class="panel-row">
+                <dt data-i18n="row_deployed">Wdrożono</dt>
+                <dd><time data-deploy="time" datetime="__DEPLOYED_ISO__">__DEPLOYED_AT__</time></dd>
+              </div>
+              <div class="panel-row">
+                <dt data-i18n="row_origin">Źródło</dt>
+                <dd>S3 · eu-central-1</dd>
+              </div>
+              <div class="panel-row">
+                <dt data-i18n="row_pipeline">Pipeline</dt>
+                <dd class="font-sans">GitHub Actions → Terraform</dd>
+              </div>
+            </dl>
+            <p class="text-[0.8125rem] font-medium text-muted" id="lane-req" data-i18n="lane_request">Żądanie</p>
             <div class="flow flow-request mt-1.5" role="group" aria-labelledby="lane-req">
               <button type="button" class="node" data-node="browser" aria-pressed="false"><span data-i18n="n_browser">Przeglądarka</span><small>HTTPS</small></button>
               <span class="wire" aria-hidden="true"></span>
@@ -141,7 +169,7 @@
               <span class="wire" aria-hidden="true"></span>
               <button type="button" class="node" data-node="s3" aria-pressed="false"><span>S3</span><small>OAC</small></button>
             </div>
-            <p class="mt-3 text-[0.75rem] font-medium text-muted" id="lane-dep" data-i18n="lane_deploy">Wdrożenie</p>
+            <p class="mt-3 text-[0.8125rem] font-medium text-muted" id="lane-dep" data-i18n="lane_deploy">Wdrożenie</p>
             <div class="flow flow-deploy mt-1.5" role="group" aria-labelledby="lane-dep">
               <button type="button" class="node" data-node="push" aria-pressed="false"><span>git push</span><small>main</small></button>
               <span class="wire" aria-hidden="true"></span>
@@ -150,9 +178,10 @@
               <button type="button" class="node" data-node="terraform" aria-pressed="false"><span>Terraform</span><small>apply</small></button>
             </div>
             <p id="node-caption" class="mt-4 min-h-[3.75rem] rounded-lg bg-raised px-3 py-2.5 text-[0.8125rem] leading-relaxed text-muted" aria-live="polite" data-i18n="cap_default">
-              Prywatny bucket S3 serwowany globalnie przez CloudFront. Każdy push na main uruchamia Terraform i publikuje stronę automatycznie.
+              Prywatny bucket S3 serwowany globalnie przez CloudFront. Każdy push na main uruchamia Terraform i publikuje stronę automatycznie. Wybierz element, aby zobaczyć szczegóły.
             </p>
-          </div>
+            </div>
+          </details>
         </div>
       </aside>
     </section>
@@ -165,22 +194,24 @@
 
         <ol class="mt-12 border-b border-line">
           <!-- Avida -->
-          <li class="grid gap-4 border-t border-line py-10 md:grid-cols-12 md:gap-10">
-            <div class="order-2 md:order-none md:col-span-4">
+          <li id="proj-avida" class="scroll-mt-24 grid gap-4 border-t border-line py-10 md:grid-cols-12 md:gap-10">
+            <div class="hidden md:col-span-4 md:block">
               <p class="meta tabular">2026 · 48 h</p>
               <p class="mt-2 text-[0.9375rem] font-medium">Collabothon 2026</p>
               <p class="text-[0.9375rem] text-muted">Commerzbank × Red Hat</p>
             </div>
-            <div class="order-1 md:order-none md:col-span-8">
+            <div class="md:col-span-8">
               <h3 class="text-2xl font-semibold tracking-[-0.02em]">Avida · AI CFO</h3>
+              <p class="mt-1.5 text-[0.9375rem] text-muted md:hidden">Collabothon 2026 · Commerzbank × Red Hat · 48 h</p>
+              <p class="mt-3 text-[0.9375rem] font-medium" data-i18n="avida_lead">Team lead · cały backend · 109 testów · demo na scenie</p>
               <p class="mt-3 max-w-[40rem] text-[1.0625rem] leading-relaxed text-muted" data-i18n="avida_desc">
-                AI CFO dla małych i średnich firm: czyta maile i umowy, wcześnie wykrywa ryzyka płynności i przygotowuje gotowe odpowiedzi, a właściciel podejmuje decyzję. Zbudowany w 48 godzin przez czteroosobowy zespół Karkonosh i pokazany na żywo na scenie.
+                AI CFO dla małych i średnich firm: czyta maile i umowy, wcześnie wykrywa ryzyka płynności i przygotowuje gotowe odpowiedzi, a decyzję podejmuje właściciel.
               </p>
               <p class="mt-3 max-w-[40rem] text-[1.0625rem] leading-relaxed" data-i18n="avida_mine">
-                Prowadziłem zespół, prezentowałem przed jury i napisałem cały backend: FastAPI z orkiestracją agentów Analyst → Legal → Negotiator, IBM Granite 3.3 8B na vLLM / llm-d w OpenShift AI, tracing i ewaluacja w MLflow, 109 testów w pytest.
+                Czteroosobowy zespół Karkonosh. Backend orkiestruje łańcuch agentów Analyst → Legal → Negotiator, a projekt prezentowałem przed jury.
               </p>
               <div class="mt-5 flex flex-wrap gap-2">
-                <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">IBM Granite 3.3 8B</span><span class="chip">vLLM · llm-d</span><span class="chip">OpenShift AI</span><span class="chip">MLflow</span><span class="chip">pytest</span>
+                <span class="chip">FastAPI</span><span class="chip">IBM Granite 3.3 8B</span><span class="chip">vLLM · llm-d</span><span class="chip">OpenShift AI</span><span class="chip">MLflow</span>
               </div>
               <a class="text-link mt-6 inline-flex items-center gap-1.5 text-[0.9375rem] font-medium" href="https://github.com/filekk/avida-cfo" target="_blank" rel="noreferrer">
                 <svg class="h-4 w-4" aria-hidden="true"><use href="#i-github"/></svg>filekk/avida-cfo<svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-arrow"/></svg>
@@ -189,47 +220,35 @@
           </li>
 
           <!-- czepiel.dev -->
-          <li class="grid gap-4 border-t border-line py-10 md:grid-cols-12 md:gap-10">
-            <div class="order-2 md:order-none md:col-span-4">
+          <li id="proj-czepiel" class="scroll-mt-24 grid gap-4 border-t border-line py-10 md:grid-cols-12 md:gap-10">
+            <div class="hidden md:col-span-4 md:block">
               <p class="meta tabular">2026 · <span class="font-sans" data-i18n="in_production">w produkcji</span></p>
               <p class="mt-2 text-[0.9375rem] font-medium">Cloud Resume Challenge</p>
               <p class="text-[0.9375rem] text-muted">AWS</p>
             </div>
-            <div class="order-1 md:order-none md:col-span-8">
+            <div class="md:col-span-8">
               <h3 class="text-2xl font-semibold tracking-[-0.02em]">czepiel.dev</h3>
+              <p class="mt-1.5 text-[0.9375rem] text-muted md:hidden">Cloud Resume Challenge · AWS · <span data-i18n="in_production">w produkcji</span></p>
               <p class="mt-3 max-w-[40rem] text-[1.0625rem] leading-relaxed text-muted" data-i18n="cz_desc">
-                Ta strona. Prywatny bucket S3 w eu-central-1 za CloudFront z Origin Access Control, certyfikat TLS z ACM, zdalny stan Terraforma i wdrożenia z GitHub Actions przez OIDC, bez stałych kluczy dostępowych.
+                Moje podejście do Cloud Resume Challenge. Bucket S3 jest prywatny i czyta go tylko CloudFront (OAC), GitHub Actions loguje się do AWS przez OIDC zamiast trzymać klucze, a stan Terraforma leży zdalnie, więc całą infrastrukturę da się odtworzyć z repozytorium.
               </p>
               <div class="mt-5 flex flex-wrap gap-2">
-                <span class="chip">Terraform</span><span class="chip">S3</span><span class="chip">CloudFront</span><span class="chip">ACM</span><span class="chip">GitHub Actions</span><span class="chip">Tailwind CSS</span>
+                <span class="chip">Terraform</span><span class="chip">S3</span><span class="chip">CloudFront</span><span class="chip">GitHub Actions</span><span class="chip">Tailwind CSS</span>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.9375rem]">
                 <a class="text-link inline-flex items-center gap-1.5 font-medium" href="https://github.com/filekk/czepiel-dev" target="_blank" rel="noreferrer">
                   <svg class="h-4 w-4" aria-hidden="true"><use href="#i-github"/></svg>filekk/czepiel-dev<svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-arrow"/></svg>
                 </a>
+                <a class="text-link font-medium" href="#panel" data-open-arch data-i18n="cz_live">Zobacz panel na żywo</a>
                 <span class="text-muted" data-i18n="cz_blog">Wpis o budowie na dev.to: wkrótce</span>
               </div>
             </div>
           </li>
 
-          <!-- In progress -->
-          <li class="grid gap-4 border-t border-line py-8 md:grid-cols-12 md:gap-10">
-            <div class="order-2 md:order-none md:col-span-4">
-              <p class="meta tabular">2027</p>
-              <p class="mt-2 inline-flex items-center gap-2 text-[0.9375rem] font-medium text-warn-text"><span class="inline-block h-2 w-2 rounded-full border-2 border-current" aria-hidden="true"></span><span data-i18n="building">W budowie</span></p>
-            </div>
-            <div class="order-1 md:order-none md:col-span-8">
-              <h3 class="text-xl font-semibold tracking-[-0.02em] text-muted" data-i18n="p3_title">Następny projekt</h3>
-            </div>
-          </li>
-          <li class="grid gap-4 border-t border-line py-8 md:grid-cols-12 md:gap-10">
-            <div class="order-2 md:order-none md:col-span-4">
-              <p class="meta tabular">2027</p>
-              <p class="mt-2 inline-flex items-center gap-2 text-[0.9375rem] font-medium text-muted"><span class="inline-block h-2 w-2 rounded-full border-2 border-dashed border-current" aria-hidden="true"></span><span data-i18n="planned">Planowany</span></p>
-            </div>
-            <div class="order-1 md:order-none md:col-span-8">
-              <h3 class="text-xl font-semibold tracking-[-0.02em] text-muted" data-i18n="p4_title">Kolejny projekt</h3>
-            </div>
+          <!-- Upcoming: no details until they ship -->
+          <li class="grid gap-2 border-t border-line py-8 md:grid-cols-12 md:gap-10">
+            <p class="meta tabular md:col-span-4">2027</p>
+            <p class="inline-flex items-baseline gap-2.5 text-[1.0625rem] text-muted md:col-span-8"><span class="inline-block h-2 w-2 shrink-0 rounded-full border-2 border-warn-text" aria-hidden="true"></span><span data-i18n="next_projects">Dwa kolejne projekty w drodze: jeden w budowie, jeden planowany.</span></p>
           </li>
         </ol>
       </div>
@@ -240,65 +259,72 @@
       <div class="container-page grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div class="lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
           <h2 id="exp-title" class="section-title" data-i18n="exp_title">Doświadczenie i edukacja</h2>
-          <p class="section-lede" data-i18n="exp_lede">Od wsparcia IT i sprzętu, przez certyfikat AWS, do studiów na Politechnice Łódzkiej.</p>
+          <p class="section-lede" data-i18n="exp_lede">Praktyki w IT, certyfikat AWS i studia na Politechnice Łódzkiej.</p>
         </div>
-        <ol class="lg:col-span-8">
-          <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <p class="meta tabular pt-0.5" data-i18n="d_ldi">lis 2026</p>
-            <div>
-              <h3 class="text-lg font-semibold" data-i18n="ldi_title">Wolontariusz / Organizator, Łódzkie Dni Informatyki 2026</h3>
-              <p class="text-[0.9375rem] text-muted" data-i18n="ldi_org">Łódzki Klaster ICT · Politechnika Łódzka</p>
-              <p class="mt-2 max-w-[40rem] leading-relaxed" data-i18n="ldi_desc">Wsparcie organizacyjne podczas 10. edycji Łódzkich Dni Informatyki.</p>
-            </div>
-          </li>
-          <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <p class="meta tabular pt-0.5" data-i18n="d_aws">paź 2026</p>
-            <div>
-              <h3 class="text-lg font-semibold">AWS Certified Solutions Architect – Associate</h3>
-              <p class="text-[0.9375rem] text-muted" data-i18n="aws_org">Amazon Web Services · SAA-C03 · ważny do 2029</p>
-              <p class="mt-2 max-w-[40rem] leading-relaxed" data-i18n="aws_desc">Projektowanie bezpiecznych, skalowalnych i odpornych na awarie architektur w AWS.</p>
-              <a class="text-link mt-2 inline-flex items-center gap-1.5 text-[0.9375rem] font-medium" href="https://www.credly.com/badges/49116c60-005f-4b99-bd33-87f067e0293f/public_url" target="_blank" rel="noreferrer"><span data-i18n="cert_verify">Zweryfikuj na Credly</span><svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            </div>
-          </li>
-          <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <p class="meta tabular pt-0.5" data-i18n="d_pl">paź 2026 – 2030</p>
-            <div>
-              <h3 class="text-lg font-semibold" data-i18n="pl_title">Politechnika Łódzka, Informatyka Stosowana</h3>
-              <p class="text-[0.9375rem] text-muted" data-i18n="pl_org">Wydział FTIMS · studia inżynierskie · w trakcie</p>
-            </div>
-          </li>
-          <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <p class="meta tabular pt-0.5" data-i18n="d_int2">lut – mar 2025</p>
-            <div>
-              <h3 class="text-lg font-semibold">Junior IT Support &amp; Systems Intern</h3>
-              <p class="text-[0.9375rem] text-muted" data-i18n="ksiaznica">Książnica Karkonoska · Jelenia Góra · praktyka</p>
-              <ul class="mt-2 max-w-[40rem] list-disc space-y-1 pl-5 leading-relaxed marker:text-line-strong">
-                <li data-i18n="int2_a">Monitorowanie, aktualizacja i optymalizacja oprogramowania systemowego w zespole.</li>
-                <li data-i18n="int2_b">Praca z bazami danych z dbałością o dokładność i bezpieczeństwo informacji.</li>
-                <li data-i18n="int2_c">Bieżące wsparcie techniczne pracowników.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <p class="meta tabular pt-0.5" data-i18n="d_int1">lis – gru 2023</p>
-            <div>
-              <h3 class="text-lg font-semibold">IT Support &amp; Hardware Intern</h3>
-              <p class="text-[0.9375rem] text-muted" data-i18n="ksiaznica2">Książnica Karkonoska · Jelenia Góra · praktyka</p>
-              <ul class="mt-2 max-w-[40rem] list-disc space-y-1 pl-5 leading-relaxed marker:text-line-strong">
-                <li data-i18n="int1_a">Diagnostyka sprzętu, konfiguracja i utrzymanie stanowisk oraz urządzeń peryferyjnych.</li>
-                <li data-i18n="int1_b">Rozwiązywanie problemów sieciowych i sprzętowych pod presją czasu.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="grid gap-1 border-y border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <p class="meta tabular pt-0.5" data-i18n="d_tech">2021 – 2026</p>
-            <div>
-              <h3 class="text-lg font-semibold" data-i18n="tech_title">Technik Programista</h3>
-              <p class="text-[0.9375rem] text-muted" data-i18n="tech_org">Zespół Szkół Elektronicznych, Jelenia Góra · pełny tytuł zawodowy</p>
-              <p class="mt-2 max-w-[40rem] leading-relaxed" data-i18n="tech_desc">Kwalifikacje INF.03 (aplikacje internetowe i bazy danych) oraz INF.04 (projektowanie i programowanie aplikacji).</p>
-            </div>
-          </li>
-        </ol>
+        <div class="space-y-12 lg:col-span-8">
+          <div>
+            <h3 class="text-[0.9375rem] font-medium text-muted" data-i18n="grp_work">Praktyki</h3>
+            <ol class="mt-3 border-b border-line">
+              <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <p class="meta tabular pt-0.5 font-sans" data-i18n="d_int2">lut – mar 2025</p>
+                <div>
+                  <h4 class="text-lg font-semibold">Junior IT Support &amp; Systems Intern</h4>
+                  <p class="text-[0.9375rem] text-muted" data-i18n="ksiaznica">Książnica Karkonoska · Jelenia Góra · praktyka</p>
+                  <p class="mt-2 max-w-[40rem] leading-relaxed" data-i18n="int2">Utrzymanie i aktualizacja oprogramowania systemowego, praca z bazami danych i wsparcie IT dla pracowników.</p>
+                </div>
+              </li>
+              <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <p class="meta tabular pt-0.5 font-sans" data-i18n="d_int1">lis – gru 2023</p>
+                <div>
+                  <h4 class="text-lg font-semibold">IT Support &amp; Hardware Intern</h4>
+                  <p class="text-[0.9375rem] text-muted" data-i18n="ksiaznica2">Książnica Karkonoska · Jelenia Góra · praktyka</p>
+                  <p class="mt-2 max-w-[40rem] leading-relaxed" data-i18n="int1">Diagnostyka i naprawa sprzętu oraz sieci, konfiguracja stanowisk i urządzeń peryferyjnych.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="text-[0.9375rem] font-medium text-muted" data-i18n="grp_edu">Edukacja i certyfikaty</h3>
+            <ol class="mt-3 border-b border-line">
+              <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <p class="meta tabular pt-0.5 font-sans" data-i18n="d_pl">paź 2026 – 2030</p>
+                <div>
+                  <h4 class="text-lg font-semibold" data-i18n="pl_title">Politechnika Łódzka, Informatyka Stosowana</h4>
+                  <p class="text-[0.9375rem] text-muted" data-i18n="pl_org">Wydział FTIMS · studia inżynierskie · w trakcie</p>
+                </div>
+              </li>
+              <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <p class="meta tabular pt-0.5 font-sans" data-i18n="d_aws">paź 2026</p>
+                <div>
+                  <h4 class="text-lg font-semibold">AWS Certified Solutions Architect – Associate</h4>
+                  <p class="text-[0.9375rem] text-muted"><span data-i18n="aws_org">Amazon Web Services · SAA-C03 · ważny do 2029</span> · <a class="text-link inline-flex items-center gap-1 font-medium" href="https://www.credly.com/badges/49116c60-005f-4b99-bd33-87f067e0293f/public_url" target="_blank" rel="noreferrer"><span data-i18n="cert_verify">Zweryfikuj na Credly</span><svg class="h-3.5 w-3.5 text-muted" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+                </div>
+              </li>
+              <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <p id="exp-tech" class="meta tabular scroll-mt-24 pt-0.5 font-sans" data-i18n="d_tech">2021 – 2026</p>
+                <div>
+                  <h4 class="text-lg font-semibold" data-i18n="tech_title">Technik Programista</h4>
+                  <p class="text-[0.9375rem] text-muted" data-i18n="tech_org">Zespół Szkół Elektronicznych, Jelenia Góra · pełny tytuł zawodowy</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="text-[0.9375rem] font-medium text-muted" data-i18n="grp_vol">Wolontariat</h3>
+            <ol class="mt-3 border-b border-line">
+              <li class="grid gap-1 border-t border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <p class="meta tabular pt-0.5 font-sans" data-i18n="d_ldi">lis 2026</p>
+                <div>
+                  <h4 class="text-lg font-semibold" data-i18n="ldi_title">Wolontariusz, organizator · Łódzkie Dni Informatyki 2026</h4>
+                  <p class="text-[0.9375rem] text-muted" data-i18n="ldi_org">Łódzki Klaster ICT · Politechnika Łódzka</p>
+                  <p class="mt-2 max-w-[40rem] leading-relaxed" data-i18n="ldi_desc">Wsparcie organizacyjne podczas 10. edycji Łódzkich Dni Informatyki.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -306,30 +332,34 @@
     <section id="skills" class="section" aria-labelledby="skills-title">
       <div class="container-page">
         <h2 id="skills-title" class="section-title" data-i18n="skills_title">Umiejętności</h2>
-        <div class="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="border-t border-fg pt-5">
+        <div class="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-10 lg:grid-cols-4">
+          <div class="flex flex-col border-t border-line-strong pt-5">
             <h3 class="font-semibold" data-i18n="sk_cloud">Chmura · AWS</h3>
-            <ul class="mt-4 space-y-2 text-muted">
+            <ul class="mb-5 mt-4 space-y-2 text-muted">
               <li>S3, CloudFront, ACM</li><li>IAM, VPC</li><li>EC2, Lambda</li>
             </ul>
+            <p class="mt-auto border-t border-line pt-3 text-[0.9375rem]"><span class="text-muted" data-i18n="sk_proof">Pokazane w:</span> <a class="text-link" href="https://www.credly.com/badges/49116c60-005f-4b99-bd33-87f067e0293f/public_url" target="_blank" rel="noreferrer">SAA-C03</a>, <a class="text-link" href="#proj-czepiel">czepiel.dev</a></p>
           </div>
-          <div class="border-t border-fg pt-5">
+          <div class="flex flex-col border-t border-line-strong pt-5">
             <h3 class="font-semibold">IaC · CI/CD</h3>
-            <ul class="mt-4 space-y-2 text-muted">
-              <li>Terraform</li><li>GitHub Actions</li><li>Docker</li><li>Git</li>
+            <ul class="mb-5 mt-4 space-y-2 text-muted">
+              <li>Terraform</li><li>GitHub Actions</li><li>Git</li>
             </ul>
+            <p class="mt-auto border-t border-line pt-3 text-[0.9375rem]"><span class="text-muted" data-i18n="sk_proof">Pokazane w:</span> <a class="text-link" href="#proj-czepiel">czepiel.dev</a></p>
           </div>
-          <div class="border-t border-fg pt-5">
+          <div class="flex flex-col border-t border-line-strong pt-5">
             <h3 class="font-semibold">AI</h3>
-            <ul class="mt-4 space-y-2 text-muted">
+            <ul class="mb-5 mt-4 space-y-2 text-muted">
               <li>LLM / Generative AI</li><li>Python, FastAPI</li><li>vLLM, OpenShift AI</li><li>MLflow</li>
             </ul>
+            <p class="mt-auto border-t border-line pt-3 text-[0.9375rem]"><span class="text-muted" data-i18n="sk_proof">Pokazane w:</span> <a class="text-link" href="#proj-avida">Avida</a></p>
           </div>
-          <div class="border-t border-fg pt-5">
+          <div class="flex flex-col border-t border-line-strong pt-5">
             <h3 class="font-semibold" data-i18n="sk_sys">Systemy i kod</h3>
-            <ul class="mt-4 space-y-2 text-muted">
+            <ul class="mb-5 mt-4 space-y-2 text-muted">
               <li>Linux, Bash</li><li>C++17</li><li>SQL</li>
             </ul>
+            <p class="mt-auto border-t border-line pt-3 text-[0.9375rem]"><span class="text-muted" data-i18n="sk_proof">Pokazane w:</span> <a class="text-link" href="#exp-tech" data-i18n="sys_proof">technikum, praktyki</a></p>
           </div>
         </div>
 
@@ -349,25 +379,33 @@
       <div class="container-page">
         <h2 id="contact-title" class="max-w-[48rem] text-[clamp(2.25rem,5.5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.04em]" data-i18n="contact_title">Szukasz stażysty na lato 2027?</h2>
         <p class="mt-5 max-w-[36rem] text-lg leading-relaxed text-muted" data-i18n="contact_lede">Cloud, DevOps, AI Engineering lub MLOps. Napisz, porozmawiajmy.</p>
-        <div class="mt-10 flex flex-wrap items-center gap-3">
-          <a class="btn btn-primary h-12 px-5 text-base" href="mailto:contact@czepiel.dev">
+        <div class="mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center" data-copy-row>
+          <div class="col-span-2 flex gap-3 sm:contents">
+          <a class="btn btn-primary h-12 flex-1 justify-center px-5 text-base sm:flex-none" href="mailto:contact@czepiel.dev">
             <svg aria-hidden="true"><use href="#i-mail"/></svg>contact@czepiel.dev
           </a>
-          <a class="btn h-12 px-5 text-base" href="https://www.linkedin.com/in/filip-czepiel-563749411/" target="_blank" rel="noreferrer">
-            <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
-          </a>
-          <a class="btn h-12 px-5 text-base" href="https://github.com/filekk" target="_blank" rel="noreferrer">
+          <button type="button" class="btn btn-icon h-12 w-12" data-copy="contact@czepiel.dev" aria-label="Kopiuj adres e-mail: contact@czepiel.dev" data-i18n-aria="copy_aria" title="contact@czepiel.dev">
+            <svg class="i-idle" aria-hidden="true"><use href="#i-copy"/></svg><svg class="i-done" aria-hidden="true"><use href="#i-check"/></svg>
+          </button>
+          </div>
+          <a class="btn btn-quiet h-12 justify-center px-5 text-base" href="https://github.com/filekk" target="_blank" rel="noreferrer">
             <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub
           </a>
+          <a class="btn btn-quiet h-12 justify-center px-5 text-base" href="https://www.linkedin.com/in/filip-czepiel-563749411/" target="_blank" rel="noreferrer">
+            <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
+          </a>
+          <p class="copy-fallback col-span-2 basis-full text-[0.9375rem] text-muted" data-copy-msg hidden></p>
         </div>
       </div>
     </section>
   </main>
 
+  <p id="copy-status" class="sr-only" aria-live="polite"></p>
+
   <footer class="border-t border-line">
     <div class="container-page flex flex-col gap-3 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
       <p>© 2026 Filip Czepiel</p>
-      <p><span data-i18n="footer_built">Hostowane na AWS (S3 + CloudFront), wdrażane przez GitHub Actions.</span> <a class="text-link text-muted hover:text-fg" href="https://github.com/filekk/czepiel-dev" target="_blank" rel="noreferrer" data-i18n="footer_src">Kod źródłowy</a></p>
+      <p><a class="text-link text-muted hover:text-fg" href="https://github.com/filekk/czepiel-dev" target="_blank" rel="noreferrer" data-i18n="footer_src">Kod źródłowy</a></p>
     </div>
   </footer>
 
@@ -377,15 +415,18 @@
         pl: {
           skip: "Przejdź do treści", home_aria: "czepiel.dev, początek strony", nav_aria: "Główna",
           nav_projects: "Projekty", nav_exp: "Doświadczenie", nav_skills: "Umiejętności", nav_contact: "Kontakt",
-          status: "Szukam stażu na lato 2027",
+          status: "Staż · lato 2027 · Cloud / DevOps / AI",
           positioning: "Buduję infrastrukturę chmurową na AWS i zmierzam w stronę AI Engineering i MLOps.",
           meta_uni: "Politechnika Łódzka · Informatyka Stosowana",
-          cta_email: "Napisz do mnie", cta_cv: "CV wkrótce", cv_title: "CV w przygotowaniu",
-          panel_title: "Ta strona", panel_sub: "Działa na infrastrukturze, którą zbudowałem.", panel_status: "Online",
-          row_commit: "Commit", row_deployed: "Wdrożono", row_origin: "Origin", row_pipeline: "Pipeline",
-          arch_title: "Architektura: wskaż element", lane_request: "Żądanie", lane_deploy: "Wdrożenie",
+          cta_email: "Napisz do mnie", cv_line: "CV: wkrótce do pobrania",
+          copy_fail: "Nie udało się skopiować. Adres:",
+          copy_aria: "Kopiuj adres e-mail: contact@czepiel.dev", copied: "Skopiowano adres e-mail",
+          doc_desc: "Filip Czepiel: student Informatyki Stosowanej na Politechnice Łódzkiej, AWS Certified Solutions Architect – Associate. Szukam stażu na lato 2027: Cloud, DevOps, AI Engineering / MLOps.",
+          panel_title: "Ta strona na AWS", panel_sub: "Zbudowałem ją sam: prywatny hosting, automatyczne wdrożenia, zero stałych kluczy.", panel_status: "Online",
+          row_commit: "Commit", row_deployed: "Wdrożono", row_origin: "Źródło", row_pipeline: "Pipeline",
+          arch_title: "Jak działa ta strona", lane_request: "Żądanie", lane_deploy: "Wdrożenie",
           n_browser: "Przeglądarka", row_edge: "Serwowane z",
-          cap_default: "Prywatny bucket S3 serwowany globalnie przez CloudFront. Każdy push na main uruchamia Terraform i publikuje stronę automatycznie.",
+          cap_default: "Prywatny bucket S3 serwowany globalnie przez CloudFront. Każdy push na main uruchamia Terraform i publikuje stronę automatycznie. Wybierz element, aby zobaczyć szczegóły.",
           cap_browser: "Twoja przeglądarka łączy się po HTTPS z najbliższym punktem brzegowym CloudFront, nie z serwerem w jednym regionie.",
           cap_cloudfront: "CloudFront serwuje stronę z cache na brzegu sieci. Certyfikat TLS dla czepiel.dev pochodzi z ACM (us-east-1).",
           cap_s3: "Bucket S3 w eu-central-1 jest w pełni prywatny. Odczyt ma tylko CloudFront, dzięki Origin Access Control.",
@@ -393,47 +434,45 @@
           cap_actions: "GitHub Actions loguje się do AWS przez OIDC (krótkotrwała rola IAM, zero stałych kluczy) i buduje CSS.",
           cap_terraform: "Terraform (stan zdalny w S3) aplikuje infrastrukturę, potem s3 sync publikuje pliki i unieważnia cache CloudFront.",
           proj_title: "Projekty", proj_lede: "Rzeczy, które naprawdę działają, oraz to, co buduję przed sezonem staży.",
-          avida_desc: "AI CFO dla małych i średnich firm: czyta maile i umowy, wcześnie wykrywa ryzyka płynności i przygotowuje gotowe odpowiedzi, a właściciel podejmuje decyzję. Zbudowany w 48 godzin przez czteroosobowy zespół Karkonosh i pokazany na żywo na scenie.",
-          avida_mine: "Prowadziłem zespół, prezentowałem przed jury i napisałem cały backend: FastAPI z orkiestracją agentów Analyst → Legal → Negotiator, IBM Granite 3.3 8B na vLLM / llm-d w OpenShift AI, tracing i ewaluacja w MLflow, 109 testów w pytest.",
+          avida_desc: "AI CFO dla małych i średnich firm: czyta maile i umowy, wcześnie wykrywa ryzyka płynności i przygotowuje gotowe odpowiedzi, a decyzję podejmuje właściciel.", avida_lead: "Team lead · cały backend · 109 testów · demo na scenie",
+          avida_mine: "Czteroosobowy zespół Karkonosh. Backend orkiestruje łańcuch agentów Analyst → Legal → Negotiator, a projekt prezentowałem przed jury.",
           cert_aria: "AWS Certified Solutions Architect – Associate, zweryfikuj na Credly", cert_verify: "Zweryfikuj na Credly",
-          avida_role: "Team lead", avida_pitch: "Pitch przed jury", in_production: "w produkcji",
-          cz_desc: "Ta strona. Prywatny bucket S3 w eu-central-1 za CloudFront z Origin Access Control, certyfikat TLS z ACM, zdalny stan Terraforma i wdrożenia z GitHub Actions przez OIDC, bez stałych kluczy dostępowych.",
-          cz_blog: "Wpis o budowie na dev.to: wkrótce", spring: "wiosna", building: "W budowie",
-          p3_title: "Następny projekt",
-          planned: "Planowany", p4_title: "Kolejny projekt",
-          exp_title: "Doświadczenie i edukacja", exp_lede: "Od wsparcia IT i sprzętu, przez certyfikat AWS, do studiów na Politechnice Łódzkiej.",
-          d_ldi: "lis 2026", ldi_title: "Wolontariusz / Organizator, Łódzkie Dni Informatyki 2026", ldi_org: "Łódzki Klaster ICT · Politechnika Łódzka",
+          in_production: "w produkcji",
+          cz_desc: "Moje podejście do Cloud Resume Challenge. Bucket S3 jest prywatny i czyta go tylko CloudFront (OAC), GitHub Actions loguje się do AWS przez OIDC zamiast trzymać klucze, a stan Terraforma leży zdalnie, więc całą infrastrukturę da się odtworzyć z repozytorium.", cz_live: "Zobacz panel na żywo",
+          cz_blog: "Wpis o budowie na dev.to: wkrótce",
+          next_projects: "Dwa kolejne projekty w drodze: jeden w budowie, jeden planowany.",
+          exp_title: "Doświadczenie i edukacja", exp_lede: "Praktyki w IT, certyfikat AWS i studia na Politechnice Łódzkiej.",
+          grp_work: "Praktyki", grp_edu: "Edukacja i certyfikaty", grp_vol: "Wolontariat",
+          d_ldi: "lis 2026", ldi_title: "Wolontariusz, organizator · Łódzkie Dni Informatyki 2026", ldi_org: "Łódzki Klaster ICT · Politechnika Łódzka",
           ldi_desc: "Wsparcie organizacyjne podczas 10. edycji Łódzkich Dni Informatyki.",
           d_aws: "paź 2026", aws_org: "Amazon Web Services · SAA-C03 · ważny do 2029",
-          aws_desc: "Projektowanie bezpiecznych, skalowalnych i odpornych na awarie architektur w AWS.",
           d_pl: "paź 2026 – 2030", pl_title: "Politechnika Łódzka, Informatyka Stosowana", pl_org: "Wydział FTIMS · studia inżynierskie · w trakcie",
           d_int2: "lut – mar 2025", ksiaznica: "Książnica Karkonoska · Jelenia Góra · praktyka", ksiaznica2: "Książnica Karkonoska · Jelenia Góra · praktyka",
-          int2_a: "Monitorowanie, aktualizacja i optymalizacja oprogramowania systemowego w zespole.",
-          int2_b: "Praca z bazami danych z dbałością o dokładność i bezpieczeństwo informacji.",
-          int2_c: "Bieżące wsparcie techniczne pracowników.",
+          int2: "Utrzymanie i aktualizacja oprogramowania systemowego, praca z bazami danych i wsparcie IT dla pracowników.",
           d_int1: "lis – gru 2023",
-          int1_a: "Diagnostyka sprzętu, konfiguracja i utrzymanie stanowisk oraz urządzeń peryferyjnych.",
-          int1_b: "Rozwiązywanie problemów sieciowych i sprzętowych pod presją czasu.",
+          int1: "Diagnostyka i naprawa sprzętu oraz sieci, konfiguracja stanowisk i urządzeń peryferyjnych.",
           d_tech: "2021 – 2026", tech_title: "Technik Programista", tech_org: "Zespół Szkół Elektronicznych, Jelenia Góra · pełny tytuł zawodowy",
-          tech_desc: "Kwalifikacje INF.03 (aplikacje internetowe i bazy danych) oraz INF.04 (projektowanie i programowanie aplikacji).",
-          skills_title: "Umiejętności", sk_cloud: "Chmura · AWS", sk_sys: "Systemy i kod",
+          skills_title: "Umiejętności", sk_cloud: "Chmura · AWS", sk_sys: "Systemy i kod", sk_proof: "Pokazane w:", sys_proof: "technikum, praktyki",
           langs_title: "Języki", l_pl: "Polski", l_pl_lvl: "ojczysty", l_en: "Angielski", l_en_lvl: "biegły, zawodowy", l_de: "Niemiecki", l_de_lvl: "podstawowy",
           contact_title: "Szukasz stażysty na lato 2027?", contact_lede: "Cloud, DevOps, AI Engineering lub MLOps. Napisz, porozmawiajmy.",
-          footer_built: "Hostowane na AWS (S3 + CloudFront), wdrażane przez GitHub Actions.", footer_src: "Kod źródłowy",
+          footer_src: "Kod źródłowy",
           local: "podgląd lokalny", toggle: "EN", toggle_aria: "Switch to English", toggle_lang: "en"
         },
         en: {
           skip: "Skip to content", home_aria: "czepiel.dev, back to top", nav_aria: "Main",
           nav_projects: "Projects", nav_exp: "Experience", nav_skills: "Skills", nav_contact: "Contact",
-          status: "Looking for a summer 2027 internship",
+          status: "Summer 2027 intern · Cloud / DevOps / AI",
           positioning: "I build cloud infrastructure on AWS, and I'm heading toward AI engineering and MLOps.",
           meta_uni: "Lodz University of Technology · Applied Computer Science",
-          cta_email: "Email me", cta_cv: "CV coming soon", cv_title: "CV in progress",
-          panel_title: "This page", panel_sub: "Running on infrastructure I built.", panel_status: "Online",
+          cta_email: "Email me", cv_line: "CV: available to download soon",
+          copy_fail: "Couldn't copy. The address is:",
+          copy_aria: "Copy email address: contact@czepiel.dev", copied: "Email address copied",
+          doc_desc: "Filip Czepiel: Applied Computer Science student at Lodz University of Technology, AWS Certified Solutions Architect – Associate. Looking for a summer 2027 internship: Cloud, DevOps, AI engineering / MLOps.",
+          panel_title: "This site on AWS", panel_sub: "I built it myself: private hosting, automatic deploys, no long-lived keys.", panel_status: "Online",
           row_commit: "Commit", row_deployed: "Deployed", row_origin: "Origin", row_pipeline: "Pipeline",
-          arch_title: "Architecture: point at a part", lane_request: "Request", lane_deploy: "Deploy",
+          arch_title: "How this site runs", lane_request: "Request", lane_deploy: "Deploy",
           n_browser: "Browser", row_edge: "Served from",
-          cap_default: "A private S3 bucket served worldwide through CloudFront. Every push to main runs Terraform and ships the site automatically.",
+          cap_default: "A private S3 bucket served worldwide through CloudFront. Every push to main runs Terraform and ships the site automatically. Pick a step to see what it does.",
           cap_browser: "Your browser connects over HTTPS to the nearest CloudFront edge location, not to a server in one region.",
           cap_cloudfront: "CloudFront serves the page from its edge cache. The TLS certificate for czepiel.dev comes from ACM (us-east-1).",
           cap_s3: "The S3 bucket in eu-central-1 is fully private. Only CloudFront can read it, through Origin Access Control.",
@@ -441,45 +480,43 @@
           cap_actions: "GitHub Actions signs in to AWS via OIDC (a short-lived IAM role, no long-lived keys) and builds the CSS.",
           cap_terraform: "Terraform (remote state in S3) applies the infrastructure, then s3 sync publishes the files and invalidates the CloudFront cache.",
           proj_title: "Projects", proj_lede: "Things that actually run, and what I'm building before internship season.",
-          avida_desc: "An AI CFO for small and medium businesses: it reads emails and contracts, spots cash-flow risks early and drafts ready-to-send replies, while the owner makes the final call. Built in 48 hours by Karkonosh, a team of four, and demoed live on stage.",
-          avida_mine: "I led the team, pitched to the jury and wrote the entire backend: FastAPI orchestrating an Analyst → Legal → Negotiator agent chain, IBM Granite 3.3 8B on vLLM / llm-d in OpenShift AI, MLflow tracing and evaluation, and 109 pytest tests.",
+          avida_desc: "An AI CFO for small and medium businesses: it reads emails and contracts, spots cash-flow risks early and drafts ready-to-send replies, while the owner makes the call.", avida_lead: "Team lead · entire backend · 109 tests · live demo on stage",
+          avida_mine: "Karkonosh, a team of four. The backend orchestrates an Analyst → Legal → Negotiator agent chain, and I pitched the project to the jury.",
           cert_aria: "AWS Certified Solutions Architect – Associate, verify on Credly", cert_verify: "Verify on Credly",
-          avida_role: "Team lead", avida_pitch: "Pitched to the jury", in_production: "in production",
-          cz_desc: "This site. A private S3 bucket in eu-central-1 behind CloudFront with Origin Access Control, an ACM TLS certificate, remote Terraform state, and GitHub Actions deploys via OIDC with no long-lived access keys.",
-          cz_blog: "Build write-up on dev.to: coming soon", spring: "spring", building: "In progress",
-          p3_title: "Upcoming project",
-          planned: "Planned", p4_title: "Next project",
-          exp_title: "Experience & education", exp_lede: "From IT and hardware support, through the AWS certification, to engineering studies at Lodz University of Technology.",
-          d_ldi: "Nov 2026", ldi_title: "Volunteer / Organizer, Łódź IT Days 2026 (ŁDI)", ldi_org: "Łódź ICT Cluster · Lodz University of Technology",
+          in_production: "in production",
+          cz_desc: "My take on the Cloud Resume Challenge. The S3 bucket is private and only CloudFront can read it (OAC), GitHub Actions signs in to AWS with OIDC instead of stored keys, and Terraform state lives remotely, so the whole infrastructure can be rebuilt from the repo.", cz_live: "See the live panel",
+          cz_blog: "Build write-up on dev.to: coming soon",
+          next_projects: "Two more projects on the way: one in progress, one planned.",
+          exp_title: "Experience & education", exp_lede: "IT internships, the AWS certification and engineering studies at Lodz University of Technology.",
+          grp_work: "Internships", grp_edu: "Education & certifications", grp_vol: "Volunteering",
+          d_ldi: "Nov 2026", ldi_title: "Volunteer, organizer · Łódź IT Days 2026 (ŁDI)", ldi_org: "Łódź ICT Cluster · Lodz University of Technology",
           ldi_desc: "Organizational support during the 10th edition of Łódź IT Days.",
           d_aws: "Oct 2026", aws_org: "Amazon Web Services · SAA-C03 · valid until 2029",
-          aws_desc: "Designing secure, scalable and fault-tolerant architectures on AWS.",
           d_pl: "Oct 2026 – 2030", pl_title: "Lodz University of Technology, Applied Computer Science", pl_org: "Faculty of FTIMS · BEng · in progress",
           d_int2: "Feb – Mar 2025", ksiaznica: "Książnica Karkonoska library · Jelenia Góra · internship", ksiaznica2: "Książnica Karkonoska library · Jelenia Góra · internship",
-          int2_a: "Monitored, updated and optimized system software as part of the team.",
-          int2_b: "Worked with databases with close attention to accuracy and information security.",
-          int2_c: "Provided day-to-day technical support to staff.",
+          int2: "Maintained and updated system software, worked with databases and supported staff with IT.",
           d_int1: "Nov – Dec 2023",
-          int1_a: "Hardware diagnostics, configuration and upkeep of workstations and peripherals.",
-          int1_b: "Resolved network and hardware incidents under time pressure.",
+          int1: "Diagnosed and fixed hardware and network issues, set up workstations and peripherals.",
           d_tech: "2021 – 2026", tech_title: "Programmer Technician", tech_org: "Technical School of Electronics, Jelenia Góra · full vocational title",
-          tech_desc: "INF.03 (web applications and databases) and INF.04 (software design and programming) qualifications.",
-          skills_title: "Skills", sk_cloud: "Cloud · AWS", sk_sys: "Systems & code",
+          skills_title: "Skills", sk_cloud: "Cloud · AWS", sk_sys: "Systems & code", sk_proof: "Shown in:", sys_proof: "technical school, internships",
           langs_title: "Languages", l_pl: "Polish", l_pl_lvl: "native", l_en: "English", l_en_lvl: "full professional", l_de: "German", l_de_lvl: "basic",
           contact_title: "Hiring a summer 2027 intern?", contact_lede: "Cloud, DevOps, AI engineering or MLOps. Drop me a line.",
-          footer_built: "Hosted on AWS (S3 + CloudFront), deployed by GitHub Actions.", footer_src: "Source code",
+          footer_src: "Source code",
           local: "local preview", toggle: "PL", toggle_aria: "Przełącz na polski", toggle_lang: "pl"
         }
       };
 
-      var lang = "pl";
-      try { lang = localStorage.getItem("czepiel_lang") === "en" ? "en" : "pl"; } catch (e) {}
+      // Saved choice wins; otherwise follow the browser (Polish browsers get PL, everyone else EN).
+      var saved = null;
+      try { saved = localStorage.getItem("czepiel_lang"); } catch (e) {}
+      var lang = saved === "en" || saved === "pl" ? saved
+        : ((navigator.language || "pl").toLowerCase().indexOf("pl") === 0 ? "pl" : "en");
       var activeCaption = "cap_default";
       var btn = document.getElementById("lang-toggle");
       var label = document.getElementById("lang-label");
       var caption = document.getElementById("node-caption");
 
-      function apply(l) {
+      function apply(l, save) {
         lang = l;
         var d = t[l];
         document.documentElement.lang = l;
@@ -495,33 +532,40 @@
           var k = el.getAttribute("data-i18n-title");
           if (d[k] != null) el.setAttribute("title", d[k]);
         });
+        document.querySelector('meta[name="description"]').setAttribute("content", d.doc_desc);
         caption.textContent = d[activeCaption];
         label.textContent = d.toggle;
         btn.setAttribute("aria-label", d.toggle_aria);
         btn.setAttribute("lang", d.toggle_lang);
         localDeploy();
-        try { localStorage.setItem("czepiel_lang", l); } catch (e) {}
+        if (save) { try { localStorage.setItem("czepiel_lang", l); } catch (e) {} }
+        document.documentElement.classList.remove("i18n-pending");
       }
 
       // Deploy metadata is stamped by CI; show an honest label in local previews.
       function localDeploy() {
         var sha = document.querySelector('[data-deploy="sha"]');
-        var time = document.querySelector('[data-deploy="time"]');
+        var times = document.querySelectorAll('[data-deploy="time"]');
         if (sha.dataset.stamped === "no" || sha.textContent.indexOf("__") === 0) {
           sha.dataset.stamped = "no";
+          sha.classList.add("font-sans");
           sha.textContent = t[lang].local;
-          time.textContent = "—";
+          times.forEach(function (el) { el.textContent = "—"; });
           var a = document.querySelector("[data-deploy-link]");
           a.href = "https://github.com/filekk/czepiel-dev/commits/main";
         }
       }
 
-      btn.addEventListener("click", function () { apply(lang === "pl" ? "en" : "pl"); });
+      btn.addEventListener("click", function () { apply(lang === "pl" ? "en" : "pl", true); });
 
       // Architecture nodes: hover or focus previews, click pins; caption explains the part.
       var nodes = document.querySelectorAll(".node");
       var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      function preview(key) { caption.textContent = t[lang][key]; }
+      // Announce only deliberate actions (focus, click); pointer hover updates silently.
+      function preview(key, announce) {
+        caption.setAttribute("aria-live", announce ? "polite" : "off");
+        caption.textContent = t[lang][key];
+      }
       function trace(lane) {
         if (reduced || !lane) return;
         lane.classList.remove("trace"); void lane.offsetWidth; lane.classList.add("trace");
@@ -529,7 +573,7 @@
       nodes.forEach(function (n) {
         var key = "cap_" + n.dataset.node;
         n.addEventListener("pointerenter", function () { preview(key); });
-        n.addEventListener("focus", function () { preview(key); });
+        n.addEventListener("focus", function () { preview(key, true); });
         n.addEventListener("pointerleave", function () { preview(activeCaption); });
         n.addEventListener("blur", function () { preview(activeCaption); });
         n.addEventListener("click", function () {
@@ -537,14 +581,59 @@
           nodes.forEach(function (m) { m.setAttribute("aria-pressed", "false"); });
           n.setAttribute("aria-pressed", on ? "true" : "false");
           activeCaption = on ? key : "cap_default";
-          preview(activeCaption);
+          preview(activeCaption, true);
         });
       });
       var deployLane = document.querySelector(".flow-deploy");
       deployLane.addEventListener("pointerenter", function () { trace(deployLane); });
       deployLane.addEventListener("focusin", function (e) { if (!deployLane.contains(e.relatedTarget)) trace(deployLane); });
       // The request path plays once after the panel settles, then rests.
-      setTimeout(function () { trace(document.querySelector(".flow-request")); }, 900);
+      // On phones the diagram starts folded; it plays when opened.
+      var arch = document.getElementById("arch");
+      var requestLane = document.querySelector(".flow-request");
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        arch.open = true;
+        setTimeout(function () { trace(requestLane); }, 900);
+      }
+      arch.addEventListener("toggle", function () { if (arch.open) trace(requestLane); });
+      document.querySelectorAll("[data-open-arch]").forEach(function (a) {
+        a.addEventListener("click", function () { if (!arch.open) arch.open = true; else trace(requestLane); });
+      });
+
+      // Copy email: for visitors without a mail client.
+      var copyStatus = document.getElementById("copy-status");
+      function fallbackCopy(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+        return ok;
+      }
+      document.querySelectorAll("[data-copy]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var text = b.getAttribute("data-copy");
+          function done() {
+            b.classList.add("is-done");
+            copyStatus.textContent = t[lang].copied;
+            clearTimeout(b._reset);
+            b._reset = setTimeout(function () { b.classList.remove("is-done"); copyStatus.textContent = ""; }, 2000);
+          }
+          function failed() {
+            var msg = b.closest("[data-copy-row]").querySelector("[data-copy-msg]");
+            msg.textContent = t[lang].copy_fail + " ";
+            var addr = document.createElement("span");
+            addr.className = "select-all font-medium text-fg";
+            addr.textContent = text;
+            msg.appendChild(addr);
+            msg.hidden = false;
+            copyStatus.textContent = t[lang].copy_fail + " " + text;
+          }
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(done, function () { if (fallbackCopy(text)) done(); else failed(); });
+          } else if (fallbackCopy(text)) { done(); } else { failed(); }
+        });
+      });
 
       // Live edge data: on CloudFront, show which edge location served this visitor.
       // The row is reserved up front (no layout shift) and filled when the HEAD request answers.
